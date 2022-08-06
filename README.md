@@ -2,7 +2,7 @@
 
 
 <!-- Qrx LOGO -->
-<div align="center">
+<div align="center"style="background-color:purple">
   <a href="https://github.com/zuri-training/qr_gen_team60">
     <img src="https://github.com/zuri-training/Qr_gen-Team_54-Repo/blob/dev/assets/logo.svg" alt="Logo" width="300" height="250">
   </a>
@@ -75,9 +75,28 @@ QR x is a platform designed to make encoding information easy and accessible to 
 ## collaborators
   #### Ayodele Ayodeji  - Developer
   #### Olowu Abayomi  -  Developer
+  #### John Okpo    - Developer
+  #### Madu Jang - Developer
+  #### Victor Akobundu - Developer
+  #### Blessing Bueze - Developer
+  #### Onyekachi Nwaogu - Developer
+  #### Praise Obah - Developer
+  #### Odeyemi Gift - Developer
   #### David Austin  - Product Designer
   #### Faizah Alayo - Product Designer
-  #### John         - Developer
+  #### Jesutofunmi Hephzibah Adebayo - Product Designer
+  #### AO daniel - Product Designer
+  #### Vivian - Product Designer
+  #### Opeyemi Odusanya - Product Designer
+  #### Josephine Sodipo - Product Designer 
+  #### Ajiri Precious - Product Designer
+  #### Ojo Peace - Product Designer
+  #### Akintayo Akinlami - Product Designer
+  #### Fayeye David - Product Designer
+  #### Anuoluwapo  - Product Designer
+  #### Eleojo Peace - Product Designer
+  #### Oluwaseun - Product Designer
+  #### Raymond - Product Designer
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
