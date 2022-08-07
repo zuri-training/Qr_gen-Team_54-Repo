@@ -73,9 +73,9 @@ QR x is a platform designed to make encoding information easy and accessible to 
 
 <!-- Collaborators -->
 ## collaborators
-  #### Ayodele Ayodeji  - Developer
-  #### Olowu Abayomi  -  Developer
-  #### John Okpo    - Developer
+  #### Ayodele Ayodeji  - Frontend Developer
+  #### Olowu Abayomi  -  Backend Developer
+  #### John Okpo    - Backend Developer
   #### Madu Jang - Developer
   #### Victor Akobundu - Developer
   #### Blessing Bueze - Developer
