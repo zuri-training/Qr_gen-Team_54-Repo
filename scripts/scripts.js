@@ -22,4 +22,4 @@ holder.addEventListener('click',()=> {
 
 document.querySelector(".link").forEach(n => n.addEventListener("click", () => {
     navDesk.classList.remove('nav-active')
-}))
+
