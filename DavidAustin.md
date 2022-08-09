@@ -1,1 +1,1 @@
-google.com
+<a href="google.com">google</a>
