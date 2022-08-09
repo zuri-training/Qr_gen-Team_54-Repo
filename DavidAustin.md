@@ -1,1 +1,1 @@
-<a href="google.com" target="_blank">google</a>
+<a href="google.com" target="blank">google</a>
