@@ -2,5 +2,6 @@
 
     "python.formatting.provider": "black",
     "editor.formatOnSave": true,
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "python.pythonPath": "venv\\Scripts\\python.exe"
 }
