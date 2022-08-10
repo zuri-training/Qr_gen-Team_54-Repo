@@ -3,6 +3,7 @@ from .models import Contacts
 from django.contrib import messages, redirect
 
 
+<<<<<<< HEAD
 
 
 def generate_contact_qr_code(request):
@@ -22,3 +23,7 @@ def generate_contact_qr_code(request):
         return render(request, "template_name", context)
         # return redirect("generate_code")
     return render(request, "template_name")
+=======
+def generate_qr_code(request):
+    pass
+>>>>>>> 4a67d64595d810b51c8d43d4f3e9ede1b987a9c9
