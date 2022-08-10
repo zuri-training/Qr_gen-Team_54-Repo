@@ -2,7 +2,7 @@
 
 /* defining general colors */
 *{
-    margin: 0;
+    margin: 0px;
     padding: 0;
     box-sizing: border-box;
 }
@@ -169,6 +169,30 @@ font-weight: 500;
 line-height: 24px;
 margin-bottom: 30px;
   
+}
+
+.button1:hover {
+
+  box-shadow: 0 0 3px 1px #703586;;
+
+}
+
+.button2:hover {
+
+  box-shadow: 0 0 8px 3px #EE4266;
+
+}
+
+.button3:hover {
+
+  box-shadow: 0 0 8px 3px #EE4266;
+
+}
+
+.button4:hover {
+
+  box-shadow: 0 0 8px 3px #703586;;
+
 }
 
 label {
