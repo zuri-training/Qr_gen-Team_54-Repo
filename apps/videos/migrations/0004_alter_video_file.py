@@ -7,13 +7,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('videos', '0003_alter_video_file'),
+        ("videos", "0003_alter_video_file"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='video',
-            name='file',
-            field=models.FileField(upload_to='media/videos/', validators=[apps.common.custom_validators.validate_video_file]),
+            model_name="video",
+            name="file",
+            field=models.FileField(
+                upload_to="media/videos/",
+                validators=[apps.common.custom_validators.validate_video_file],
+            ),
         ),
     ]

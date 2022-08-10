@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{messages}}">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form action="{% url 'generate_code' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="text_name" id="name">
+        <input type="text" name="description" id="description">
+        <input type="submit" value="generate code">
+    </form>
+    {% if text %}
+        <div class="">
+            <img src="{{text.qr_image.url}}" alt="">
+        </div>
+    {% else %}
+        <div class="">
+            <img src="{{text.qr_image.url}}" alt="">
+        </div>
+    {% endif %}
+    
+</body>
+</html>
