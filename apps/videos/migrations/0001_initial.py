@@ -16,22 +16,39 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Video',
+            name="Video",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('qr_image', models.ImageField(blank=True, unique=True, upload_to='qrcodes')),
-                ('created_on', models.DateTimeField(auto_now_add=True)),
-                ('updated_on', models.DateTimeField(auto_now=True)),
-                ('name', models.CharField(max_length=255)),
-                ('file', models.FileField(upload_to='')),
-                ('file_size', models.CharField(max_length=11)),
-                ('description', models.TextField()),
-                ('created_by', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                (
+                    "qr_image",
+                    models.ImageField(blank=True, unique=True, upload_to="qrcodes"),
+                ),
+                ("created_on", models.DateTimeField(auto_now_add=True)),
+                ("updated_on", models.DateTimeField(auto_now=True)),
+                ("name", models.CharField(max_length=255)),
+                ("file", models.FileField(upload_to="")),
+                ("file_size", models.CharField(max_length=11)),
+                ("description", models.TextField()),
+                (
+                    "created_by",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Video',
-                'verbose_name_plural': 'Videos',
-                'ordering': ('-created_on',),
+                "verbose_name": "Video",
+                "verbose_name_plural": "Videos",
+                "ordering": ("-created_on",),
             },
         ),
     ]

@@ -1,10 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
-
-
-def generate_qr_code(request):
+def generate_text_qr_code(request):
     pass
 
-# def get_text_detail(request):
-#     template_name = ''
+
+def get_text_qr_code(request, id):
+    pass
