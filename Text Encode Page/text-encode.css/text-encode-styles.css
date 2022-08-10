@@ -171,6 +171,30 @@ margin-bottom: 30px;
   
 }
 
+.button1:hover {
+
+  box-shadow: 0 0 3px 1px #703586;;
+
+}
+
+.button2:hover {
+
+  box-shadow: 0 0 8px 3px #EE4266;
+
+}
+
+.button3:hover {
+
+  box-shadow: 0 0 8px 3px #EE4266;
+
+}
+
+.button4:hover {
+
+  box-shadow: 0 0 8px 3px #703586;;
+
+}
+
 label {
 font-family: 'Ubuntu', sans-serif;
 font-size: 16px;
