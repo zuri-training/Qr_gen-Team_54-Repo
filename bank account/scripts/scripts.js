@@ -11,15 +11,15 @@ toggler.addEventListener("click", () => {
     toggle_Menu.classList.toggle("activatede")
 })
 
-document.querySelectorAll(".mob-link").forEach(n => n.addEventListener("click",()=> {
+document.querySelectorAll(".mob-link").forEach(n => n.addEventListener("click", () => {
     toggler.classList.remove("activated")
     toggle_Menu.classList.remove("activatede")
 }))
 
-holder.addEventListener('click',()=> {
+holder.addEventListener('click', () => {
     navDesk.classList.toggle('nav-active')
 })
 
 document.querySelector(".link").forEach(n => n.addEventListener("click", () => {
     navDesk.classList.remove('nav-active')
-
+}))
