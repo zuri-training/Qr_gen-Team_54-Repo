@@ -7,16 +7,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("music", "0003_alter_music_qr_image"),
+        ('music', '0003_alter_music_qr_image'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="music",
-            name="file",
-            field=models.FileField(
-                upload_to="",
-                validators=[apps.common.custom_validators.validate_mp3_file_type],
-            ),
+            model_name='music',
+            name='file',
+            field=models.FileField(upload_to='', validators=[apps.common.custom_validators.validate_mp3_file_type]),
         ),
     ]

@@ -11,15 +11,13 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("texts", "0001_initial"),
+        ('texts', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="text",
-            name="created_by",
-            field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL
-            ),
+            model_name='text',
+            name='created_by',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
         ),
     ]

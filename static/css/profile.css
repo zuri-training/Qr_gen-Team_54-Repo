@@ -1,0 +1,154 @@
+/* defining general colors */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #7A428E;
+    --secondary-color: #EE4266;
+    --heading-color: #3B2244;
+    --light-color: #FBF8FC;
+    --text-color: #909298;
+    --input-color: #ACAEB2;
+}
+
+html {
+    font-size: 50%;
+}
+
+
+/* styles for body and defining of fonts */
+
+body {
+    background-color: var(--light-color);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* logo */
+
+.logo {
+    width: 17rem;
+}
+
+
+/* navbar */
+
+
+
+main {
+    display: flex;
+    align-content: bottom;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: 70%;
+    height: 700px;
+    left: 15%;
+    top: 150px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+
+main img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.fname,
+.surname,
+.email,
+.empty {
+    display: flex;
+    width: 100%;
+    height: 82px;
+    left: 196px;
+    padding-top: 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(122, 66, 142, 0.2);
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.inputs {
+    margin-top: 100px;
+}
+
+.fi,
+.name,
+.sur,
+.sName,
+.mail,
+.mailName {
+    width: 179px;
+    height: 37px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 37px;
+    /* identical to box height */
+    text-transform: capitalize;
+    color: #4A4A4A;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.fi,
+.sur,
+.mail {
+    padding-left: 10px;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 700px) {
+    
+    
+    main img {
+        align-items: center;
+        justify-items: center;
+        width: 125px;
+        height: 125px;
+        top: 242px;
+        /* sec-10 */
+        background: #E5D3FE;
+        border-radius: 50%;
+    }
+    .fname,
+    .surname,
+    .email {
+        padding-top: 30px;
+    }
+    .fi,
+    .name,
+    .sur,
+    .sName,
+    .mail,
+    .mailName {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 18px;
+        text-transform: lowercase;
+        color: #4A4A4A;
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+}

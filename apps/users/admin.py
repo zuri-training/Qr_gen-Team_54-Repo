@@ -9,32 +9,17 @@ class AdminCustomUser(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     ordering = ["email"]
-    list_display = (
-        "id",
-        "first_name",
-        "last_name",
-        "email",
-        "is_active",
-        "is_staff",
-        "is_superuser",
-    )
+    list_display = ('id', 'first_name', 'last_name', 'email', 'is_active', 'is_staff', 'is_superuser')
     fieldsets = (
-        (
-            None,
-            {
-                "fields": ("email", "password"),
-            },
-        ),
-        (
-            "Details",
-            {
-                "fields": ("first_name", "last_name", "slug"),
-            },
-        ),
-        (
-            "Permissions",
-            {
-                "fields": ("is_active", "is_staff", "is_superuser"),
-            },
-        ),
+        (None,{
+            "fields": ('email', 'password'),
+        }),
+
+        ('Details', {
+            "fields": ('first_name', 'last_name', 'slug'),
+        }),
+
+        ('Permissions', {
+            "fields": ('is_active', 'is_staff', 'is_superuser'),
+        }),
     )

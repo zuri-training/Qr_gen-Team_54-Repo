@@ -6,16 +6,12 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("socials", "0001_initial"),
+        ('socials', '0001_initial'),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name="social",
-            options={
-                "ordering": ("-created_on",),
-                "verbose_name": "Social media",
-                "verbose_name_plural": "Social media",
-            },
+            name='social',
+            options={'ordering': ('-created_on',), 'verbose_name': 'Social media', 'verbose_name_plural': 'Social media'},
         ),
     ]
