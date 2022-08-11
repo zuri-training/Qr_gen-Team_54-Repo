@@ -275,20 +275,20 @@ ul li .l-out, .nav-group-mobile .l-out {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width:80%;
+    flex-wrap: wrap;
     margin: 0 auto;
 }
 
 .wrapper .section-heading {
     margin-top: 40px;
     font-size: 35px;
-    width: 100%;
     text-align: start;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
+    width:1100px;
 
 }
 
