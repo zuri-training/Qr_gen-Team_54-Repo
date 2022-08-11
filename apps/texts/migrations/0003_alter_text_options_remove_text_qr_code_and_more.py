@@ -6,25 +6,21 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("texts", "0002_initial"),
+        ('texts', '0002_initial'),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name="text",
-            options={
-                "ordering": ("-created_on",),
-                "verbose_name": "Text",
-                "verbose_name_plural": "Texts",
-            },
+            name='text',
+            options={'ordering': ('-created_on',), 'verbose_name': 'Text', 'verbose_name_plural': 'Texts'},
         ),
         migrations.RemoveField(
-            model_name="text",
-            name="qr_code",
+            model_name='text',
+            name='qr_code',
         ),
         migrations.AlterField(
-            model_name="text",
-            name="qr_image",
-            field=models.ImageField(blank=True, null=True, upload_to="qrcodes"),
+            model_name='text',
+            name='qr_image',
+            field=models.ImageField(blank=True, null=True, upload_to='qrcodes'),
         ),
     ]

@@ -1,5 +1,8 @@
 from django.urls import path
-from . import views
+from .import views
 
 
-urlpatterns = [path("generate-code", views.generate_qr_code, name="bank")]
+
+urlpatterns = [
+    path('generate-code', views.generate_qr_code, name = 'bank')
+]

@@ -7,16 +7,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("images", "0004_alter_image_file_size"),
+        ('images', '0004_alter_image_file_size'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="image",
-            name="file",
-            field=models.FileField(
-                upload_to="media/images/",
-                validators=[apps.common.custom_validators.validate_image_file_type],
-            ),
+            model_name='image',
+            name='file',
+            field=models.FileField(upload_to='media/images/', validators=[apps.common.custom_validators.validate_image_file_type]),
         ),
     ]

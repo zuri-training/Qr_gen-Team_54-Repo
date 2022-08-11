@@ -7,16 +7,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("pdfs", "0003_alter_pdf_file"),
+        ('pdfs', '0003_alter_pdf_file'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="pdf",
-            name="file",
-            field=models.FileField(
-                upload_to="media/pdfs/",
-                validators=[apps.common.custom_validators.validate_pdf_file_type],
-            ),
+            model_name='pdf',
+            name='file',
+            field=models.FileField(upload_to='media/pdfs/', validators=[apps.common.custom_validators.validate_pdf_file_type]),
         ),
     ]

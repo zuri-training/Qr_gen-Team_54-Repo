@@ -7,21 +7,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("images", "0002_initial"),
+        ('images', '0002_initial'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="image",
-            name="file",
-            field=models.FileField(
-                upload_to="",
-                validators=[apps.common.custom_validators.validate_image_file_type],
-            ),
+            model_name='image',
+            name='file',
+            field=models.FileField(upload_to='', validators=[apps.common.custom_validators.validate_image_file_type]),
         ),
         migrations.AlterField(
-            model_name="image",
-            name="qr_image",
-            field=models.ImageField(blank=True, null=True, upload_to="qrcodes"),
+            model_name='image',
+            name='qr_image',
+            field=models.ImageField(blank=True, null=True, upload_to='qrcodes'),
         ),
     ]

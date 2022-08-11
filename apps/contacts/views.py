@@ -3,6 +3,10 @@ from .models import Contacts
 from django.contrib import messages
 
 
+
+def generate_qr_code(request):
+    pass
+    
 def generate_contact_qr_code(request):
     if request.method == "POST":
         name = request.POST.get("name")

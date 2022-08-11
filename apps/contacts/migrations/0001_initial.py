@@ -17,46 +17,21 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Contacts",
+            name='Contacts',
             fields=[
-                (
-                    "id",
-                    models.UUIDField(
-                        default=uuid.uuid4,
-                        editable=False,
-                        primary_key=True,
-                        serialize=False,
-                    ),
-                ),
-                (
-                    "qr_image",
-                    models.ImageField(blank=True, null=True, upload_to="qrcodes"),
-                ),
-                ("created_on", models.DateTimeField(auto_now_add=True)),
-                ("updated_on", models.DateTimeField(auto_now=True)),
-                ("name", models.CharField(max_length=255)),
-                ("contact_name", models.CharField(max_length=255)),
-                (
-                    "phone_no",
-                    models.CharField(
-                        max_length=11,
-                        validators=[
-                            apps.common.custom_validators.validate_phone_no_value_and_length
-                        ],
-                    ),
-                ),
-                (
-                    "created_by",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                ('qr_image', models.ImageField(blank=True, null=True, upload_to='qrcodes')),
+                ('created_on', models.DateTimeField(auto_now_add=True)),
+                ('updated_on', models.DateTimeField(auto_now=True)),
+                ('name', models.CharField(max_length=255)),
+                ('contact_name', models.CharField(max_length=255)),
+                ('phone_no', models.CharField(max_length=11, validators=[apps.common.custom_validators.validate_phone_no_value_and_length])),
+                ('created_by', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                "verbose_name": "Contact",
-                "verbose_name_plural": "Contacts",
-                "ordering": ("-created_on",),
+                'verbose_name': 'Contact',
+                'verbose_name_plural': 'Contacts',
+                'ordering': ('-created_on',),
             },
         ),
     ]

@@ -1,0 +1,301 @@
+@import url(https://allfont.net/allfont.css?fonts=agency-fb);
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+
+.left{
+background-image: url("./background.PNG");
+background-repeat: no-repeat;
+background-position:center;
+background-size: contain;
+width: 400px;
+height: 730px;
+background: linear-gradient(205.3deg, #540D6E);
+
+}
+.Container{
+    display: flex;
+    justify-content: center;
+    align-items:left;
+}
+
+.body{
+margin:0% auto;
+padding: 0%;
+font-family: 'ubuntu', san-serif;
+
+}
+
+
+
+.Logo{
+margin-left: 11rem;
+margin-top: 12.35rem;
+
+}
+
+.Head{
+margin-left: 6.5rem;
+color: aliceblue;
+margin-bottom: 6px;
+font-size: 27px;
+font-family:'Ubuntu';
+
+}
+
+.coder{
+
+ width: 260px;
+ height: 260px;
+ margin-left:4.8rem;
+
+
+}
+.container{
+display: flex;
+justify-content: center;
+align-items: center
+
+}
+
+.title-container{
+    width: 50%;
+  }
+  
+  .form-container{
+    padding-top: 60px;
+    width: 60%;
+    height: 100%;
+    background-color: White;
+  }
+  
+  .form-card{
+    margin:0 auto;
+  }
+  
+  form{
+    width: 100%;
+    display: flex;
+  }
+  
+  .form-control{
+    width: 100%;
+    margin-bottom: 20px;
+    font-family:'Ubuntu';
+    
+    
+    
+  }
+  
+  .Title{
+    text-align: center;
+    margin-bottom: 50px;
+    color: #540D6E;
+    font-family:'Ubuntu';
+    margin-top: 1rem;
+    margin-right: 3rems;
+  }
+  
+  label{
+    font-size: 10px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #540D6E;
+  
+  }
+  
+  input{
+    width:100%;
+    padding: 10px 8px;
+    border: 1.5px solid #3A3A3A;
+    border-radius: 5px;
+    color: #ACAEB2;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 24px;
+    
+  }
+  
+  .submit-container{
+    text-align: center;
+  }
+  
+
+  
+  
+  button{
+    padding: 8px 80px;
+    text-transform: uppercase;
+    background: #EE4266;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 9px;
+    font-family:'Ubuntu';
+    font-size: 12px;
+  }
+  
+  .social-container{
+    margin-top: 30px;
+    margin-bottom: 70px;
+    display: flex;
+    justify-content:center;
+    font-family:'Ubuntu';
+    font-size: 15px;
+    margin-left: 1rem;
+    padding-left: 10;
+    color: #540D6E;
+
+    
+    
+    
+    
+    
+  }
+  
+  .login-div{
+  text-align: center;
+  
+  }
+
+  
+  
+  
+  .title-container{
+    position: relative;
+    background-image: url("./assets/background.PNG");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  
+  }
+
+  
+
+
+  
+  .center-logo{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .card{
+    align-self: center;
+  }
+  
+  .title-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+  }
+  
+  .background{
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: -1;
+  }
+  
+  .logo{
+   display: block
+  }
+  .icon{
+    width: 20px;
+    height: auto;
+    margin: 0px 5px;
+  
+  }
+
+.form-container{
+display: flexbox;
+
+
+
+
+}
+
+.right{
+background-color:#FFFFFF;
+width: 50%;
+height: 100vh;
+
+
+
+}
+.logins{
+width: 65%;
+margin-bottom: 10rems;
+
+}
+.google{
+width: 20px;
+height:20px ;
+margin-left: 1rem;
+
+}
+.apple{
+width: 20px; 
+height: 20px;
+margin-left: 1rem;
+}
+.facebook{
+width: 20px;
+height: 20px;
+margin-left: 1rem;
+}
+.img{
+text-align: right;
+
+}
+.submit2-container{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+
+
+
+
+  
+  @media screen and (max-width: 480px) {
+    .title-container{
+      display: none
+    }
+  .left{
+display: none;
+
+  }
+    .right {
+      width: 100%;
+      background-image: url("/background-clip.svg");
+      background-position: top right;
+      background-repeat: no-repeat;
+      background-size: 50%;
+
+    }
+    
+    .qrs{
+    width: 100%;
+    }
+    
+
+
+
+
+
+  }
+

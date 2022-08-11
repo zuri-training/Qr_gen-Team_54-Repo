@@ -10,33 +10,24 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("banks", "0001_initial"),
+        ('banks', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="bank",
-            name="created_by",
-            field=models.ForeignKey(
-                default=1,
-                on_delete=django.db.models.deletion.CASCADE,
-                to=settings.AUTH_USER_MODEL,
-            ),
+            model_name='bank',
+            name='created_by',
+            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name="bank",
-            name="account_number",
-            field=models.CharField(
-                max_length=10,
-                validators=[
-                    apps.common.custom_validators.validate_value_type_and_length
-                ],
-            ),
+            model_name='bank',
+            name='account_number',
+            field=models.CharField(max_length=10, validators=[apps.common.custom_validators.validate_value_type_and_length]),
         ),
         migrations.AlterField(
-            model_name="bank",
-            name="qr_image",
-            field=models.ImageField(blank=True, null=True, upload_to="qrcodes"),
+            model_name='bank',
+            name='qr_image',
+            field=models.ImageField(blank=True, null=True, upload_to='qrcodes'),
         ),
     ]
