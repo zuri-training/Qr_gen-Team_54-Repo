@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options</title>
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!--CSS stylesheet-->
+    <link rel="stylesheet" href="/static/css/options2.css">
+
+</head>
+<body>
+    <!---- hero section start---->
+     <!-- Header -->
+  <!-- Header -->
+  <!-- navbar -->
+  <nav class="nav">
+    <a href="/templates/index.html"><img src="/static/assets/logo.svg" alt="Qrx" class="logo"></a>
+    <ul class="nav-group">
+      <li><a href="/templates/options.html" class="">Services</a></li>
+      <li><a href="/templates/draft.html" class="">Draft</a></li>
+      <li><a href="#" class="">History</a></li>
+    </ul>
+  
+    <p class="header-username">FA</p>
+    <ul class="nav-desktop">
+      <li><a href="/templates/profile.html" class="pf-link link">Profile </a></li>
+      <li><a href="/templates/feedback.html" class="f-b link">Feedback</a></li>
+      <li><a href="{% url 'user_logout' %}" class="l-out link">Logout</a></li>
+    </ul>
+  
+    <div id="toggler">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-group-mobile">
+      <li><a href="/templates/options.html" class="s link">Services</a></li>
+      <li><a href="/templates/draft.html" class="d link">Draft</a></li>
+      <li><a href="#" class="h link">History</a></li>
+      <li><a href="/templates/profile.html" class="para link">Profile </a></li>
+      <li><a href="/templates/feedback.html" class="f link">Feedback</a></li>
+      <li><a href="/templates/loginindex.html" class="l-out link">Logout</a></li>
+    </ul>
+  </nav>
+
+    <!--Options-->  
+    <div class="wrapper"> 
+            <h2 class="section-heading">Select a type of QR CODE</h2>
+            <div class="row">
+                <div class="card">
+                    <a href="/templates/business.html">
+                      <div class="icon-wrapper">
+                        <img src="/static/assets/businessicon.svg" alt="business icon">
+                      </div>
+                      <h3>Business</h3>
+                      <p class="p">Share your business information</p>
+                    </a>
+                    
+                </div>
+
+                <div class="card">
+                  <a href="/templates/picture-upload.html">
+                    <div class="icon-wrapper">
+                    <img src="/static/assets/Media.svg" alt="">
+                    </div>
+                    <h3>Images</h3>
+                    <p class="p">Display a gallery</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                  <a href="/templates/text-encode.html.html">
+                    <div class="icon-wrapper">
+                      <img src="/static/assets/Text.svg" alt="">
+                    </div>
+                    <h3>Text</h3>
+                    <p class="p">Write a message</p>
+                  </a>
+                </div>
+
+                <div class="card">
+                    <a href="/templates/PDF-encode.html">
+                      <div class="icon-wrapper">
+                          <img src="/svgs/pdf.svg" alt="">
+                      </div>
+                      <h3>PDF</h3>
+                      <p class="p">Show a PDF</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                  <a href="/templates/Website-encode.html">
+                    <div class="icon-wrapper">
+                    <img src="/static/assets//website.svg" alt=""> 
+                    </div>
+                    <h3>Website</h3>
+                    <p class="p">Open a URL</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                  <a href="/templates/socialmedialink.html">
+                    <div class="icon-wrapper">
+                    <img src="/static/assets/social media.svg" alt="">
+                    </div>
+                    <h3>Social media links</h3>
+                    <p class="p">Share links</p>
+                  </a>
+                </div>
+
+                <div class="card">
+                    <a href="/templates/contact-page.html">
+                    <div class="icon-wrapper">
+                    <img src="/static/assets/contacts.svg" alt="">
+                    </div>
+                    <h3>VC/Contacts</h3>
+                    <p class="p">Share contacts</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                  <a href="/templates/video-upload.html">
+                    <div class="icon-wrapper">
+                    <img src="/static/assets/video.svg" alt="">
+                    </div>
+                    <h3>Video</h3>
+                    <p class="p">Share a video</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="/templates/bankaccount.html">
+                      <div class="icon-wrapper">
+                        <img src="/static/assets/bank account.svg" alt="">
+                      </div>
+                      <h3>Bank Account</h3>
+                      <p class="p">Share your account details</p>
+                    </a>
+                </div>
+
+                <div class="card">
+                  <a href="/templates/music-upload.html">
+                    <div class="icon-wrapper">
+                      <img src="/static/assets/music.svg" alt="">
+                      </div>
+                      <h3>Music</h3>
+                      <p class="p">Share your music</p>
+                    </div>
+                </a>
+            </div>
+    </div>
+    
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-desktop">
+        <div>
+          <div class="group1">
+            <a href="/templates/index.html"><img src="/static/assets/logo.svg" alt="Qrx" class="logo"></a>
+            <p class="footer-txt">2022 Zuri /project phase Team 54</p>
+          </div>
+    
+          <div class="group2">
+            <p>
+              <a href="/templates/faq-page.html" class="link">FAQ</a>
+              <a href="/templates/aboutUs.html" class="link">About Us</a>
+            </p>
+            <p><a href="/templates/terms.html" class="link">Terms and conditions</a></p>
+            <p><a href="/templates/feedback.html" class="link">Feedback</a></p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="footer-mobile">
+        <div>
+          <div>
+            <a href="/templates/index.html"><img src="/static/assets/logo.svg" alt="Qrx" class="logo"></a>
+            <a href="/templates/faq-page.html" class="link">FAQ</a>
+            <a href="/templates/aboutUs.html" class="link">About Us</a>
+            <a href="/templates/terms.html" class="link">Terms and conditions</a>
+          </div>
+          <div>
+            <a href="/templates/feedback.html"><img src="/static/assets/chat.svg" alt="chat icon" class="chat-img"></a>
+          </div>
+        </div>
+        <p class="footer-txt">2022 Zuri /project phase Team 54</p>
+      </div>
+    </footer>
+    <script src="/static/scripts/scripts.js"></script>
+</body>
+</html>

@@ -8,8 +8,8 @@ from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
+    username=None
+    full_name = models.CharField(max_length=255)
     email = models.EmailField(unique=True, max_length=255)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
