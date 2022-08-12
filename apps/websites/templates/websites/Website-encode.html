@@ -90,9 +90,10 @@
           <div><button type="button" class="button4">Download</button></div>
         </div>
         <div class="button-3">
-          <button type="button" class="button5">PNG</button>
-          <button type="button" class="button6">JPG</button>
-          <button type="button" class="button7">PDF</button>
+          
+          <a class="button5" type="button" href="{{qr.qr_image.url}}" download>PNG</a>
+          <a class="button6" type="button" href="{{qr.qr_image.url}}" download>JPG</a>
+          <a class="button7" type="button" href="{{qr_code_pdf}}" download>PDF</a>
           <div>
             <a><img src="{% static './assets/ei_share-google.svg' %}" class="share" /></a>
           </div>

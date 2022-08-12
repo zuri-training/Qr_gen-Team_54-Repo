@@ -269,12 +269,14 @@ body {
     margin: 0 auto;
     padding: 30px 70px;
 }
+
 /* footer */
 .footer .footer-desktop {
     background-image: url("/static/assets/footer-background.svg");
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .footer .footer-desktop{
     position: relative;
     padding: 12rem 12rem 3rem 12rem;

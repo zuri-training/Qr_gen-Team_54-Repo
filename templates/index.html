@@ -137,14 +137,14 @@
           <div class="group2">
             <p>
               <a href="#" class="link">FAQ</a>
-              <a href="/templates/aboutUs.html" class="link">About Us</a>
+              <a href="{% url 'about_us' %}" class="link">About Us</a>
             </p>
             <p>
-              <a href="/templates/terms.html" class="link"
+              <a href="{% url 'terms' %}" class="link"
                 >Terms and conditions</a
               >
             </p>
-            <p><a href="/templates/feedback.html" class="link">Feedback</a></p>
+            <p><a href="{% url 'feedback' %}" class="link">Feedback</a></p>
           </div>
         </div>
       </div>
@@ -152,28 +152,25 @@
       <div class="footer-mobile">
         <div>
           <div>
-            <a href="/templates/index.html"
-              ><img src="/static/assets/logo.svg" alt="Qrx" class="logo"
+            <a href="{% url 'home_page' %}"
+              ><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo"
             /></a>
-            <a href="/templates/faq-page.html" class="link">FAQ</a>
-            <a href="/templates/aboutUs.html" class="link">About Us</a>
-            <a href="/templates/terms.html" class="link"
+            <a href="{% url 'faq' %}" class="link">FAQ</a>
+            <a href="{% url 'about_us' %}" class="link">About Us</a>
+            <a href="{% url 'terms' %}" class="link"
               >Terms and conditions</a
             >
           </div>
           <div>
-            <a href="/templates/feedback.html"
-              ><img
-                src="/static/assets/chat.svg"
-                alt="chat icon"
-                class="chat-img"
-            /></a>
+            <a href="{% url 'feedback' %}">
+              <imgsrc="{% static './assets/chat.svg' %}"alt="chat icon" class="chat-img"/>
+            </a>
           </div>
         </div>
         <p class="footer-txt">2022 Zuri /project phase Team 54</p>
       </div>
     </footer>
 
-    <script src="/static/scripts/scripts.js"></script>
+    <script src="{% static './scripts/scripts.js' %}"></script>
   </body>
 </html>
