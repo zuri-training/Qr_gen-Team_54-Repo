@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!--CSS stylesheet-->
-    <link rel="stylesheet" href="/static/css/options2.css">
+    <link rel="stylesheet" href="{% static './css/options2.css' %}">
 
 </head>
 <body>
@@ -22,17 +22,17 @@
   <!-- Header -->
   <!-- navbar -->
   <nav class="nav">
-    <a href="/templates/index.html"><img src="/static/assets/logo.svg" alt="Qrx" class="logo"></a>
+    <a href="{% url 'home_page' %}"><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo"></a>
     <ul class="nav-group">
       <li><a href="/templates/options.html" class="">Services</a></li>
-      <li><a href="/templates/draft.html" class="">Draft</a></li>
+      <li><a href="{% url 'draft' %}" class="">Draft</a></li>
       <li><a href="#" class="">History</a></li>
     </ul>
   
     <p class="header-username">FA</p>
     <ul class="nav-desktop">
-      <li><a href="/templates/profile.html" class="pf-link link">Profile </a></li>
-      <li><a href="/templates/feedback.html" class="f-b link">Feedback</a></li>
+      <li><a href="{% url 'profile' %}" class="pf-link link">Profile </a></li>
+      <li><a href="{% url 'feedback' %}" class="f-b link">Feedback</a></li>
       <li><a href="{% url 'user_logout' %}" class="l-out link">Logout</a></li>
     </ul>
   
@@ -43,11 +43,11 @@
     </div>
     <ul class="nav-group-mobile">
       <li><a href="/templates/options.html" class="s link">Services</a></li>
-      <li><a href="/templates/draft.html" class="d link">Draft</a></li>
+      <li><a href="{% url 'draft' %}" class="d link">Draft</a></li>
       <li><a href="#" class="h link">History</a></li>
-      <li><a href="/templates/profile.html" class="para link">Profile </a></li>
-      <li><a href="/templates/feedback.html" class="f link">Feedback</a></li>
-      <li><a href="/templates/loginindex.html" class="l-out link">Logout</a></li>
+      <li><a href="{% url 'profile' %}" class="para link">Profile </a></li>
+      <li><a href="{% url 'feedback' %}" class="f link">Feedback</a></li>
+      <li><a href="{% url 'user_login' %}" class="l-out link">Logout</a></li>
     </ul>
   </nav>
 
@@ -56,9 +56,9 @@
             <h2 class="section-heading">Select a type of QR CODE</h2>
             <div class="row">
                 <div class="card">
-                    <a href="/templates/business.html">
+                    <a href="{% url 'business' %}">
                       <div class="icon-wrapper">
-                        <img src="/static/assets/businessicon.svg" alt="business icon">
+                        <img src="{% static './assets/businessicon.svg' %}" alt="business icon">
                       </div>
                       <h3>Business</h3>
                       <p class="p">Share your business information</p>
@@ -67,9 +67,9 @@
                 </div>
 
                 <div class="card">
-                  <a href="/templates/picture-upload.html">
+                  <a href="{% url 'image' %}">
                     <div class="icon-wrapper">
-                    <img src="/static/assets/Media.svg" alt="">
+                    <img src="{% static './assets/Media.svg' %}" alt="">
                     </div>
                     <h3>Images</h3>
                     <p class="p">Display a gallery</p>
@@ -77,9 +77,9 @@
                 </div>
 
                 <div class="card">
-                  <a href="/templates/text-encode.html.html">
+                  <a href="{% url 'text' %}">
                     <div class="icon-wrapper">
-                      <img src="/static/assets/Text.svg" alt="">
+                      <img src="{% static './assets/Text.svg' %}" alt="">
                     </div>
                     <h3>Text</h3>
                     <p class="p">Write a message</p>
@@ -87,9 +87,9 @@
                 </div>
 
                 <div class="card">
-                    <a href="/templates/PDF-encode.html">
+                    <a href="{% url 'pdf' %}">
                       <div class="icon-wrapper">
-                          <img src="/svgs/pdf.svg" alt="">
+                          <img src="{% static './assets/svgs/pdf.svg' %}" alt="">
                       </div>
                       <h3>PDF</h3>
                       <p class="p">Show a PDF</p>
@@ -97,9 +97,9 @@
                 </div>
 
                 <div class="card">
-                  <a href="/templates/Website-encode.html">
+                  <a href="{% url 'website' %}">
                     <div class="icon-wrapper">
-                    <img src="/static/assets//website.svg" alt=""> 
+                    <img src="{% static './assets/website.svg' %}" alt=""> 
                     </div>
                     <h3>Website</h3>
                     <p class="p">Open a URL</p>
@@ -107,9 +107,9 @@
                 </div>
 
                 <div class="card">
-                  <a href="/templates/socialmedialink.html">
+                  <a href="{% url 'social' %}">
                     <div class="icon-wrapper">
-                    <img src="/static/assets/social media.svg" alt="">
+                    <img src="{% static './assets/social media.svg' %}" alt="">
                     </div>
                     <h3>Social media links</h3>
                     <p class="p">Share links</p>
@@ -117,9 +117,9 @@
                 </div>
 
                 <div class="card">
-                    <a href="/templates/contact-page.html">
+                    <a href="{% url 'contact' %}">
                     <div class="icon-wrapper">
-                    <img src="/static/assets/contacts.svg" alt="">
+                    <img src="{% static './assets/contacts.svg' %}" alt="">
                     </div>
                     <h3>VC/Contacts</h3>
                     <p class="p">Share contacts</p>
@@ -127,9 +127,9 @@
                 </div>
 
                 <div class="card">
-                  <a href="/templates/video-upload.html">
+                  <a href="{% url 'video' %}">
                     <div class="icon-wrapper">
-                    <img src="/static/assets/video.svg" alt="">
+                    <img src="{% static '/assets/video.svg' %}" alt="">
                     </div>
                     <h3>Video</h3>
                     <p class="p">Share a video</p>
@@ -137,9 +137,9 @@
                 </div>
 
                 <div class="card">
-                    <a href="/templates/bankaccount.html">
+                    <a href="{% url 'bank' %}">
                       <div class="icon-wrapper">
-                        <img src="/static/assets/bank account.svg" alt="">
+                        <img src="{% static './assets/bank account.svg' %}" alt="">
                       </div>
                       <h3>Bank Account</h3>
                       <p class="p">Share your account details</p>
@@ -147,9 +147,9 @@
                 </div>
 
                 <div class="card">
-                  <a href="/templates/music-upload.html">
+                  <a href="{% url 'music' %}">
                     <div class="icon-wrapper">
-                      <img src="/static/assets/music.svg" alt="">
+                      <img src="{% static './assets/music.svg' %}" alt="">
                       </div>
                       <h3>Music</h3>
                       <p class="p">Share your music</p>
@@ -163,17 +163,17 @@
       <div class="footer-desktop">
         <div>
           <div class="group1">
-            <a href="/templates/index.html"><img src="/static/assets/logo.svg" alt="Qrx" class="logo"></a>
+            <a href="{% url 'home_page' %}"><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo"></a>
             <p class="footer-txt">2022 Zuri /project phase Team 54</p>
           </div>
     
           <div class="group2">
             <p>
-              <a href="/templates/faq-page.html" class="link">FAQ</a>
-              <a href="/templates/aboutUs.html" class="link">About Us</a>
+              <a href="{% url 'faq' %}" class="link">FAQ</a>
+              <a href="{% url 'about_us' %}" class="link">About Us</a>
             </p>
-            <p><a href="/templates/terms.html" class="link">Terms and conditions</a></p>
-            <p><a href="/templates/feedback.html" class="link">Feedback</a></p>
+            <p><a href="{% url 'terms' %}" class="link">Terms and conditions</a></p>
+            <p><a href="{% url 'feedback' %}" class="link">Feedback</a></p>
           </div>
         </div>
       </div>
@@ -181,18 +181,18 @@
       <div class="footer-mobile">
         <div>
           <div>
-            <a href="/templates/index.html"><img src="/static/assets/logo.svg" alt="Qrx" class="logo"></a>
-            <a href="/templates/faq-page.html" class="link">FAQ</a>
-            <a href="/templates/aboutUs.html" class="link">About Us</a>
-            <a href="/templates/terms.html" class="link">Terms and conditions</a>
+            <a href="{% url 'home_page' %}"><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo"></a>
+            <a href="{% url 'faq' %}" class="link">FAQ</a>
+            <a href="{% url 'about_us' %}" class="link">About Us</a>
+            <a href="{% url 'terms' %}" class="link">Terms and conditions</a>
           </div>
           <div>
-            <a href="/templates/feedback.html"><img src="/static/assets/chat.svg" alt="chat icon" class="chat-img"></a>
+            <a href="{% url 'feedback' %}"><img src="{% static './assets/chat.svg"' %}" alt="chat icon" class="chat-img"></a>
           </div>
         </div>
         <p class="footer-txt">2022 Zuri /project phase Team 54</p>
       </div>
     </footer>
-    <script src="/static/scripts/scripts.js"></script>
+    <script src="{% static './scripts/scripts.js' %}"></script>
 </body>
 </html>

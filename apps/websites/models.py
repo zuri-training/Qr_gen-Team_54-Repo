@@ -17,7 +17,7 @@ class Website(TimeStampModel):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("website_detail", kwargs={"id": self.id})
+        return reverse("website_detail", kwargs={"website_id": self.id})
 
     def save(self, *args, **kwargs):
         qr = qrcode.QRCode(version=1, box_size=10, border=4, error_correction=qrcode.ERROR_CORRECT_L)
