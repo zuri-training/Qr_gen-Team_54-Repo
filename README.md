@@ -52,7 +52,7 @@ pip install -m virtualenv
 ```
 - clone this project on your pc with
 ```
-git clone https://github.com/aayobam/django-graphql2
+git clone https://github.com/zuri-training/Qr_gen-Team_54-Repo
 ```
 - browse to the cloned project director or open with your favourite text IDE (EG VSCODE)
 ```
