@@ -56,7 +56,7 @@ git clone https://github.com/zuri-training/Qr_gen-Team_54-Repo
 ```
 - browse to the cloned project director or open with your favourite text IDE (EG VSCODE)
 ```
-cd django-graphql2
+cd Qr_gen-Team_54-Repo
 ```
 - create a virtual environment where all the project packages/dependencies will be installed/isolated
 ```
