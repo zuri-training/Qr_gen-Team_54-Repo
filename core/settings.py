@@ -20,8 +20,8 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = True
 ALLOWED_HOST = ['qrx-gen.herokuapp.com', '127.0.0.1', 'localhost']
 
-if DEBUG == False:
-    ALLOWED_HOST = ['qrx-gen.herokuapp.com', '127.0.0.1', 'localhost']
+# if DEBUG == False:
+#     ALLOWED_HOST = ['qrx-gen.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 
