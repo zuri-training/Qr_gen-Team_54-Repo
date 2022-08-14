@@ -18,18 +18,18 @@
   <body>
     <!-- Header -->
     <nav class="nav">
-      <a href="#"><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo" /></a>
+      <a href="{% url 'home_page' %}"><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo" /></a>
       <ul class="nav-group">
-        <li><a href="#" class="">Services</a></li>
-        <li><a href="#" class="">Draft</a></li>
+        <li><a href="{% url 'qrcode_options' %}" class="">Services</a></li>
+        <li><a href="{% url 'draft' %}" class="">Draft</a></li>
         <li><a href="#" class="">History</a></li>
       </ul>
       <!--    Desktop Drop down      -->
       <p class="header-username">FA</p>
       <ul class="nav-desktop">
-        <li><a href="#" class="pf-link link">Profile </a></li>
-        <li><a href="#" class="f-b link">Feedback</a></li>
-        <li><a href="#" class="l-out link">Logout</a></li>
+        <li><a href="{% url 'profile' %}" class="pf-link link">Profile </a></li>
+        <li><a href="{% url 'feedback' %}" class="f-b link">Feedback</a></li>
+        <li><a href="{% url 'user_logout' %}" class="l-out link">Logout</a></li>
       </ul>
       <!-- toggler -->
       <div id="toggler">
@@ -39,12 +39,12 @@
       </div>
       <!--  Mobile dropdown  -->
       <ul class="nav-group-mobile">
-        <li><a href="#" class="s link">Services</a></li>
-        <li><a href="#" class="d link">Draft</a></li>
+        <li><a href="{% url 'qrcode_options' %}" class="s link">Services</a></li>
+        <li><a href="{% url 'draft' %}" class="d link">Draft</a></li>
         <li><a href="#" class="h link">History</a></li>
-        <li><a href="#" class="p link">Profile </a></li>
-        <li><a href="#" class="f link">Feedback</a></li>
-        <li><a href="#" class="l-out link">Logout</a></li>
+        <li><a href="{% url 'profile' %}" class="p link">Profile </a></li>
+        <li><a href="{% url 'feedback' %}" class="f link">Feedback</a></li>
+        <li><a href="{% url 'user_logout' %}" class="l-out link">Logout</a></li>
       </ul>
     </nav>
 
@@ -80,8 +80,8 @@
       </div>
 
       <div class="two">
-        {% if qr.qr_image %}
-        <div class="img"><img src="{{qr.qr_image.url}}" class="img-1" /></div>
+        {% if website_obj %}
+        <div class="img"><img src="{{website_obj.qr_image.url}}" class="img-1" /></div>
         {% else %}
           <div class="img"><img src="{% static './assets/bi_qr-code.svg' %}" class="img-1"/></div>
         {% endif %}
@@ -91,9 +91,9 @@
         </div>
         <div class="button-3">
           
-          <a class="button5" type="button" href="{{qr.qr_image.url}}" download>PNG</a>
-          <a class="button6" type="button" href="{{qr.qr_image.url}}" download>JPG</a>
-          <a class="button7" type="button" href="{{qr_code_pdf}}" download>PDF</a>
+          <a class="button5" type="button" href="{{ website_obj.qr_image.url }}" download>PNG</a>
+          <a class="button6" type="button" href="{{ website_obj.qr_image_jpg.url }}" download>JPG</a>
+          <a class="button7" type="button" href="{{ website_obj_code_pdf }}" download>PDF</a>
           <div>
             <a><img src="{% static './assets/ei_share-google.svg' %}" class="share" /></a>
           </div>
@@ -126,10 +126,10 @@
       <div class="footer-mobile">
         <div>
           <div>
-            <a href="#"><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo" /></a>
-            <a href="#" class="link">FAQ</a>
-            <a href="#" class="link">About Us</a>
-            <a href="#" class="link">Terms and conditions</a>
+            <a href="{% url 'home_page' %}"><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo" /></a>
+            <a href="{% url 'faq' %}" class="link">FAQ</a>
+            <a href="{% url 'about_us' %}" class="link">About Us</a>
+            <a href="{% url 'terms' %}" class="link">Terms and conditions</a>
           </div>
           <div>
             <a href="#"

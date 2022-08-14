@@ -19,17 +19,23 @@ class Text(TimeStampModel):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("text_detail", kwargs={"id": self.id})
+        return reverse("text_detail", kwargs={"text_id": self.id})
 
     def save(self, *args, **kwargs):
         qr = qrcode.QRCode(version=1, box_size=10, border=4, error_correction=qrcode.ERROR_CORRECT_L)
-        qr_data = f'{self.description}'
+        qr_data = f'{self.get_absolute_url()}'
         qr.add_data(qr_data)
         img = qr.make_image(fill="black", back_color="white")
+
         buffer = BytesIO()
         img.save(buffer, 'PNG')
-        file_name = f'{self.created_by}_{self.id}qr.png'
-        self.qr_image.save(file_name, File(buffer), save=False)
+
+        png_name = f'{self.created_by}_qr.png'
+        jpg_name = f'{self.created_by}_qr.jpg'
+
+    
+        self.qr_image.save(png_name, File(buffer), save=False)
+        self.qr_image_jpg.save(jpg_name, File(buffer), save=False)
         return super().save(*args, **kwargs)
     
     

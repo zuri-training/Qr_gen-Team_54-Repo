@@ -16,7 +16,7 @@ class AdminCustomUser(UserAdmin):
         }),
 
         ('Details', {
-            "fields": ('first_name', 'last_name', 'slug'),
+            "fields": ('full_name',),
         }),
 
         ('Permissions', {
