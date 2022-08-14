@@ -1,4 +1,6 @@
 from .models import Website
+from core import settings
+from PIL import Image
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
@@ -24,11 +26,15 @@ def generate_qr_code(request):
         url = request.POST.get("url")
         website_obj = Website.objects.create(name=name, url=url, created_by=user)
         if website_obj is not None:
-            pdf_file = None
             website_obj.save()
+
+            qr_image_pdf = website_obj.name + "_" + str(website_obj.id) + ".pdf"
+            image = Image.open(website_obj.qr_image)
+            image.save(settings.MEDIA_ROOT + "/" + qr_image_pdf,format("PDF"))
+
             context = {
                 "website_obj": website_obj,
-                "qr_code_pdf": pdf_file,
+                "website_obj_pdf": settings.MEDIA_URL + qr_image_pdf,
             }
             messages.success(request, f"qr successfully generated")
             return render(request, template, context)

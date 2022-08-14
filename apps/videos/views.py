@@ -1,4 +1,6 @@
 from .models import Video
+from core import settings
+from PIL import Image
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
@@ -20,11 +22,15 @@ def generate_qr_code(request):
 
         video_obj = Video.objects.create(name=name, file=uploaded_file, created_by=user)
         if video_obj is not None:
-            pdf_file = None
             video_obj.save()
+
+            qr_image_pdf = video_obj.name + "_" + str(video_obj.id) + ".pdf"
+            image = Image.open(video_obj.qr_image)
+            image.save(settings.MEDIA_ROOT + "/" + qr_image_pdf,format("PDF"))
+
             context = {
                 "video_obj": video_obj,
-                "qr_code_pdf": pdf_file,
+                "video_obj_pdf": settings.MEDIA_URL + qr_image_pdf,
             }
             messages.success(request, f"qr code successfully generated")
             return render(request, template, context)
@@ -36,5 +42,5 @@ def generate_qr_code(request):
 def video_detail(request, video_id):
     template = "videos/video-upload.html"
     video_obj = get_object_or_404(Video, id=video_id)
-    context = {" video_obj":  video_obj}
+    context = {"video_obj":  video_obj}
     return render(request, template, context)

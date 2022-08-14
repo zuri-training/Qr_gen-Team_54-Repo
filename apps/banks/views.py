@@ -1,5 +1,7 @@
 from .models import Bank
 from django.contrib import messages
+from PIL import Image
+from core import settings
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -25,7 +27,6 @@ def generate_qr_code(request):
         bank_name = request.POST.get("bank_name")
         account_no = request.POST.get("account_no")
 
-        url = request.POST.get("url")
         bank_obj = Bank.objects.create(
             name=name,
             account_name=account_name,
@@ -34,11 +35,13 @@ def generate_qr_code(request):
             created_by=user
         )
         if bank_obj is not None:
-            pdf_file = None
             bank_obj.save()
+            qr_image_pdf = bank_obj.name + "_" + str(bank_obj.id) + ".pdf"
+            image = Image.open(bank_obj.qr_image)
+            image.save(settings.MEDIA_ROOT + "/" + qr_image_pdf,format("PDF"))
             context = {
                 "bank_obj": bank_obj,
-                "qr_code_pdf": pdf_file,
+                "bank_obj_pdf": settings.MEDIA_URL + qr_image_pdf,
             }
             messages.success(request, f"qr successfully generated")
             return render(request, template, context)

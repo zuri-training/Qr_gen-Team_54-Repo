@@ -51,6 +51,7 @@
     <main>
         <!-- form to fill social media details to be encoded -->
         <form action="{% url 'social' %}" method="post" class="social-display">
+            {% csrf_token %}
             <div>
                 <label for="Search Media">Social Media</label>
                 <input type="text" placeholder="Search">

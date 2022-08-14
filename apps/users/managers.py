@@ -18,7 +18,7 @@ class CustomUserManager(BaseUserManager):
         user.save()
         return user
 
-    def create_superuser(self, email, full_name, password, username=None,**extra_fields):
+    def create_superuser(self, email, password, username=None,**extra_fields):
         extra_fields.setdefault('is_active', True)
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
@@ -30,7 +30,7 @@ class CustomUserManager(BaseUserManager):
             raise ValidationError("is_superuser should be set to True.")
         
         email = self.normalize_email(email)
-        user = self.model(email=email, full_name=full_name, **extra_fields)
+        user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save()
         return user
