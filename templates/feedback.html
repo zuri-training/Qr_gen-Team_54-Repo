@@ -19,7 +19,7 @@
     <nav class="nav">
         <a href="{% url 'home_page' %}"><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo"></a>
         <ul class="nav-group">
-            <li><a href="#" class="">Services</a></li>
+            <li><a href="{% url 'qrcode_options' %}" class="">Services</a></li>
             <li><a href="{% url 'draft' %}" class="">Draft</a></li>
             <li><a href="#" class="">History</a></li>
         </ul>

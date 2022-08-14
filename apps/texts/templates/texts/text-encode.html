@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Text Encode Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="{% static './css/text-encode-styles.css' %}">
+        <link rel="stylesheet" href="{% static './css/options2.css' %}">
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="nav">
+    <a href="/templates/index.html"><img src="/static/assets/logo.svg" alt="Qrx" class="logo"></a>
+    <ul class="nav-group">
+      <li><a href="{% url 'qrcode_options' %}" class="">Services</a></li>
+      <li><a href="/templates/draft.html" class="">Draft</a></li>
+      <li><a href="#" class="">History</a></li>
+    </ul>
+  
+    <p class="header-username">FA</p>
+    <ul class="nav-desktop">
+      <li><a href="#" class="pf-link link">Profile </a></li>
+      <li><a href="#" class="f-b link">Feedback</a></li>
+      <li><a href="#" class="l-out link">Logout</a></li>
+    </ul>
+  
+    <div id="toggler">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-group-mobile position">
+      <li><a href="#" class="red">Sign up</a></li>
+      <li><a href="#" class="">Log in</a></li>
+    </ul>
+  </nav>
+
+<div class= "main">
+  
+    <form action="{% url 'text' %}" method="post">
+      {% csrf_token %}
+      <div class= "one">
+        <div class="form">
+          <label>Name your QR code</label>
+          <input type="text" class="form-group" name="name" placeholder="E.g My QRx code" required/>
+        </div>
+
+        <div class="form">
+          <label>Enter message</label>
+          <textarea class="form-group" name="description" placeholder="Max. 100 words"></textarea>
+        </div>
+
+        <div class="button">
+          <div> 
+            <button type="button" class="button1">Preview Input</button>
+          </div>
+
+          <div> 
+            <button type="submit" class="button2">Generate QR Code</button>
+          </div>
+        </div>
+      </div>
+ </form>
+    
+  <div class= "two">
+    {% if text_obj%}
+      <div class="img"><img src="{{ text_obj.qr_image.url }}" class="img-1"/></div>
+    {% else %}
+      <div class="img"><img src="{% static './assets/bi_qr-code.svg' %}" class="img-1"/></div>
+    {% endif %}
+    <div class="button-1">
+      <div>
+          <button type="button" class="button3">Customize</button>
+      </div>
+
+      <div>
+          <button type="button" class="button4">Download</button>
+      </div>
+    </div>
+
+    <div class="button-3">
+  
+        {% comment %} <button type="button" class="button5">PNG</button>
+        <button type="button" class="button6">JPG</button>
+        <button type="button" class="button7">PDF</button> {% endcomment %}
+
+        <a class="button5" type="button" href="{{ text_obj.qr_image.url }}" download>PNG</a>
+        <a class="button6" type="button" href="{{ text_obj.qr_image_jpg.url }}" download>JPG</a>
+        <a class="button7" type="button" href="{{ text_obj_code_pdf }}" download>PDF</a>
+    <div>
+      <a><img src="/static/assets/ei_share-google.svg" class="share"/></a></div>
+    </div>
+    
+  </div>
+</div>
+
+  
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-desktop">
+      <div>
+        <div class="group1">
+          <a href="/templates/index.html"><img src="/static/assets/logo.svg" alt="Qrx" class="logo"></a>
+          <p class="footer-txt">2022 Zuri /project phase Team 54</p>
+        </div>
+  
+        <div class="group2">
+          <p>
+            <a href="#" class="link">FAQ</a>
+            <a href="/templates/aboutUs.html" class="link">About Us</a>
+          </p>
+          <p><a href="/templates/terms.html" class="link">Terms and conditions</a></p>
+          <p><a href="/templates/feedback.html" class="link">Feedback</a></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-mobile">
+      <div>
+        <div>
+          <a href="/templates/index.html"><img src="/static/assets/logo.svg" alt="Qrx" class="logo"></a>
+          <a href="#" class="link">FAQ</a>
+          <a href="/templates/aboutUs.html" class="link">About Us</a>
+          <a href="/templates/terms.html" class="link">Terms and conditions</a>
+        </div>
+        <div>
+          <a href="/templates/feedback.html"><img src="/static/assets/chat.svg" alt="chat icon" class="chat-img"></a>
+        </div>
+      </div>
+      <p class="footer-txt">2022 Zuri /project phase Team 54</p>
+    </div>
+  </footer>
+  <script src="/static/scripts/scripts.js"></script>
+  <script src="/static/scripts/text-encode.scripts.js"></script>
+</body>
+
+</html>

@@ -1,11 +1,15 @@
+from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from .models import CustomUser
+from .validator import unauthenticated_user
+from django.contrib.auth.decorators import login_required
 
 
 
 # Create your views here.
+@unauthenticated_user
 def user_registration(request):
     template = 'users/signupindex.html'
     if request.method == "POST":
@@ -31,6 +35,7 @@ def user_registration(request):
     return render(request, template)
 
 
+@unauthenticated_user
 def user_login(request):
     template = 'users/loginindex.html'
     if request.method == "POST":
@@ -43,6 +48,14 @@ def user_login(request):
             return redirect("qrcode_options")
         messages.info(request, f"login unsuccessful")
     return render(request, template)
+
+
+@login_required(login_url="user_login")
+def user_profile(request):
+    user = request.user
+    template = "users/profile.html"
+    context = {"user":user}
+    return render(request, template, context)
 
 
 def user_logout(request):

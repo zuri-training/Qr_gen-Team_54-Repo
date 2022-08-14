@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+{% load social_share %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>PDF Encode Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static './css/options2.css' %}">
+  <link rel="stylesheet" href="{% static './css/media-gen.css' %}">
+</head>
+
+<body>
+  <!-- Header -->
+  <nav class="nav">
+    <a href="{% url 'home_page' %}"><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo"></a>
+    <ul class="nav-group">
+      <li><a href="{% url 'qrcode_options' %}" class="">Services</a></li>
+      <li><a href="{% url 'draft' %}" class="">Draft</a></li>
+      <li><a href="{% url 'history' %}" class="">History</a></li>
+    </ul>
+  
+    <p class="header-username">FA</p>
+    <ul class="nav-desktop">
+      <li><a href="{% url 'profile' %}" class="pf-link link">Profile </a></li>
+      <li><a href="{% url 'feedback' %}" class="f-b link">Feedback</a></li>
+      <li><a href="{% url 'user_logout' %}" class="l-out link">Logout</a></li>
+    </ul>
+  
+    <div id="toggler">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-group-mobile">
+      <li><a href="{% url 'qrcode_options' %}" class="s link">Services</a></li>
+      <li><a href="{% url 'draft' %}" class="d link">Draft</a></li>
+      <li><a href="{% url 'history' %}" class="h link">History</a></li>
+      <li><a href="{% url 'profile' %}" class="para link">Profile </a></li>
+      <li><a href="{% url 'feedback' %}" class="f link">Feedback</a></li>
+      <li><a href="{% url 'user_logout' %}" class="l-out link">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class= "main">
+    
+    <form action="{% url 'pdf' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class= "one">
+        <div class="form">
+          <label>Name your QR code</label>
+          <input type="text" class="form-group" name="name" placeholder="This field is required" required/>
+        </div>
+  
+        <div class="pdfd">
+          <label for= "file" class="pdfb">Upload PDF</label>
+          <input type="file" name="pdf_file" class="file" id="file" />
+        </div>
+  
+        <div class="button">
+          <div> 
+            <button type="submit" class="button2">Generate QR Code</button>
+          </div>
+        </div>
+    </div>
+      
+    
+    <div class= "two"  >
+      {% if pdf_obj %}
+        <div class="img"><img src="{{ pdf_obj.qr_image.url }}" class="img-1"/></div>
+      {% else %}
+        <div class="img"><img src="{% static './assets/bi_qr-code.svg' %}" class="img-1"/></div>
+      {% endif %}
+      <div class="button-1">
+        <div>
+            <button type="button" class="button3">Customize</button>
+        </div><br>
+        <div>
+            <button type="button" class="button4">Download</button>
+        </div>
+      </div>
+
+      <div class="button-3">
+        <a class="button5" type="button" href="{{ pdf_obj.qr_image.url }}" download>PNG</a>
+        <a class="button6" type="button" href="{{ pdf_obj.qr_image_jpg.url }}" download>JPG</a>
+        <a class="button7" type="button" href="{{ pdf_obj_code_pdf }}" download>PDF</a>
+        <div><a href="{% post_to_facebook  "checkout my encoded mail: {{ pdf_obj.qr_image.url}}" object_or_url "Post to Facebook" %}"><img src="{% static './assets/ei_share-google.svg' %}" class="share"/></a></div>
+      </div>
+      
+    </div>
+  </div>
+
+  
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-desktop">
+      <div>
+        <div class="group1">
+          <a href="{% url 'home_page' %}"><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo"></a>
+          <p class="footer-txt">2022 Zuri /project phase Team 54</p>
+        </div>
+  
+        <div class="group2">
+          <p>
+            <a href="{% url 'faq' %}" class="link">FAQ</a>
+            <a href="{% url 'about_us' %}" class="link">About Us</a>
+          </p>
+          <p><a href="{% url 'terms' %}" class="link">Terms and conditions</a></p>
+          <p><a href="{% url 'feedback' %}" class="link">Feedback</a></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-mobile">
+      <div>
+        <div>
+          <a href="{% url 'home_page' %}"><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo"></a>
+          <a href="{% url 'faq' %}" class="link">FAQ</a>
+          <a href="{% url 'about_us' %}" class="link">About Us</a>
+          <a href="{% url 'terms' %}" class="link">Terms and conditions</a>
+        </div>
+        <div>
+          <a href="{% url 'feedback' %}"><img src="{% static './assets/chat.svg' %}" alt="chat icon" class="chat-img"></a>
+        </div>
+      </div>
+      <p class="footer-txt">2022 Zuri /project phase Team 54</p>
+    </div>
+  </footer>
+  <script src="{% static './scripts/scripts.js' %}"></script>
+</body>
+
+</html>

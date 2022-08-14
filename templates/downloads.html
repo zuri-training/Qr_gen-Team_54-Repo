@@ -18,7 +18,7 @@
     <nav class="nav">
         <a href="/templates/index.html"><img src="/static/assets/logo.svg" alt="Qrx" class="logo"></a>
         <ul class="nav-group">
-            <li><a href="/templates/options.html" class="">Services</a></li>
+            <li><a href="{% url 'qrcode_options' %}" class="">Services</a></li>
             <li><a href="/templates//draft.html" class="">Draft</a></li>
             <li><a href="#" class="">History</a></li>
         </ul>
@@ -36,7 +36,7 @@
             <span></span>
         </div>  
         <ul class="nav-group-mobile">
-            <li ><a href="#" class="s link" >Services</a></li>
+            <li ><a href="{% url 'qrcode_options' %}" class="s link" >Services</a></li>
             <li><a href="/templates/draft.html" class="d link">Draft</a></li>
             <li><a href="#" class="h link">History</a></li>
             <li ><a href="#" class="p link">Profile </a></li>

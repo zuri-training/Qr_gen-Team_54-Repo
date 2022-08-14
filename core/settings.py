@@ -1,6 +1,8 @@
 from pathlib import Path
 import environ
 import os
+import whitenoise
+import django_on_heroku
 
 
 env = environ.Env()
@@ -19,7 +21,8 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'team54.zurifordummies.com']
+#ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'team54.zurifordummies.com']
+ALLOWED_HOST = ['*']
 
 
 # Application definition
@@ -31,6 +34,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    
     # local apps
     "apps.banks",
     "apps.business",
@@ -43,11 +47,15 @@ INSTALLED_APPS = [
     "apps.users",
     "apps.videos",
     "apps.websites",
+
+    #third party app
+    "django_social_share"
 ]
 
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -122,14 +130,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = "static/"
-MEDIA_URL = "media/"
+STATIC_URL = "/static/"
+MEDIA_URL = "/media/"
 
 
 STATICFILES_DIRS = ((BASE_DIR / "static"),)
 STATIC_ROOT = BASE_DIR / "staticfiles"
-MEDIA_ROOT = BASE_DIR / "static/media"
+MEDIA_ROOT = BASE_DIR / "static/media/"
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # django error logging
 LOGGING = {
@@ -159,3 +168,5 @@ AUTH_USER_MODEL = "users.CustomUser"
 
 MAX_VIDEO_FILE_SIZE = 100 * 1024 * 1024
 MAX_MUSIC_PDF_FILE_SIZE = 10 * 1024 * 1024
+
+django_on_heroku.settings(locals())

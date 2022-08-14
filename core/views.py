@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from django.contrib.auth.decorators import login_required
 
 
@@ -40,6 +40,5 @@ def site_draft(request):
     return render(request, template)
 
 
-def user_profile(request):
-    template = "profile.html"
-    return render(request, template)
+def site_history(reuquest):
+    return HttpResponse("coming soon")

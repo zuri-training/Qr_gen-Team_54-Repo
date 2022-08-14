@@ -7,15 +7,21 @@ from .import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+
+    # site features
     path("", views.site_home, name="home_page"),
     path('faq/', views.faq, name="faq"),
     path('draft/', views.site_draft, name="draft"),
     path('terms/', views.site_terms, name="terms"),
     path('about/', views.about_us, name="about_us"),
-    path('profile/', views.user_profile, name="profile"),
+    path('history/', views.site_history, name="history"),
     path('feedback/', views.site_feedback, name="feedback"),
+
+    # encoding option url
     path('qrcode-options/', views.qr_code_options, name="qrcode_options"),
-     path("banks/", include("apps.banks.urls")),
+
+    # apps paths
+    path("banks/", include("apps.banks.urls")),
     path("business/", include("apps.business.urls")),
     path("contact/", include("apps.contacts.urls")),
     path("image/", include("apps.images.urls")),

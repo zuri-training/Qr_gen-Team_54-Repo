@@ -24,7 +24,7 @@
   <nav class="nav">
     <a href="{% url 'home_page' %}"><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo"></a>
     <ul class="nav-group">
-      <li><a href="/templates/options.html" class="">Services</a></li>
+      <li><a href="{% url 'qrcode_options' %}" class="">Services</a></li>
       <li><a href="{% url 'draft' %}" class="">Draft</a></li>
       <li><a href="#" class="">History</a></li>
     </ul>
@@ -42,9 +42,9 @@
       <span></span>
     </div>
     <ul class="nav-group-mobile">
-      <li><a href="/templates/options.html" class="s link">Services</a></li>
+      <li><a href="{% url 'qrcode_options' %}" class="s link">Services</a></li>
       <li><a href="{% url 'draft' %}" class="d link">Draft</a></li>
-      <li><a href="#" class="h link">History</a></li>
+      <li><a href="{% url 'history' %}" class="h link">History</a></li>
       <li><a href="{% url 'profile' %}" class="para link">Profile </a></li>
       <li><a href="{% url 'feedback' %}" class="f link">Feedback</a></li>
       <li><a href="{% url 'user_login' %}" class="l-out link">Logout</a></li>
@@ -63,7 +63,6 @@
                       <h3>Business</h3>
                       <p class="p">Share your business information</p>
                     </a>
-                    
                 </div>
 
                 <div class="card">
@@ -129,7 +128,7 @@
                 <div class="card">
                   <a href="{% url 'video' %}">
                     <div class="icon-wrapper">
-                    <img src="{% static '/assets/video.svg' %}" alt="">
+                    <img src="{% static './assets/video.svg' %}" alt="">
                     </div>
                     <h3>Video</h3>
                     <p class="p">Share a video</p>

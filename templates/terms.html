@@ -21,15 +21,15 @@
         ><img src="{% static './assets/logo.svg' %}" alt="Qrx" class="logo"
       /></a>
       <ul class="nav-group">
-        <li><a href="#" class="">Services</a></li>
+        <li><a href="{% url 'qrcode_options' %}" class="">Services</a></li>
         <li><a href="{% url 'draft' %}" class="">Draft</a></li>
-        <li><a href="#" class="">History</a></li>
+        <li><a href="{% url 'history' %}" class="">History</a></li>
       </ul>
 
       <p class="header-username">FA</p>
       <ul class="nav-desktop">
-        <li><a href="#" class="pf-link link">Profile </a></li>
-        <li><a href="#" class="f-b link">Feedback</a></li>
+        <li><a href="{% url 'profile' %}" class="pf-link link">Profile </a></li>
+        <li><a href="{% url 'feedback' %}" class="f-b link">Feedback</a></li>
         <li><a href="{% url 'user_logout' %}" class="l-out link">Logout</a></li>
       </ul>
 
