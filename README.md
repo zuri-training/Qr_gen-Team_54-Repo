@@ -42,9 +42,37 @@
 
 
 <!-- ABOUT QRx -->
-## About Qrx:
-QR x is a platform designed to make encoding information easy and accessible to anyone with the qr. having generated the qr, it can be shared or downloaded. 
+# About Qrx:
+- QR x is a platform designed to make encoding information easy and accessible to anyone with the qr. having generated the qr, it can be shared or downloaded. 
 
+# installation steps:
+- install virtual environment on your pc with
+```
+pip install -m virtualenv
+```
+- clone this project on your pc with
+```
+git clone https://github.com/zuri-training/Qr_gen-Team_54-Repo
+```
+- browse to the cloned project director or open with your favourite text IDE (EG VSCODE)
+```
+cd Qr_gen-Team_54-Repo
+```
+- create a virtual environment where all the project packages/dependencies will be installed/isolated
+```
+virtualenv venv
+```
+- activate your newly created virtualenv (venv) on linux OS with
+```
+source venv/bin/activate
+```
+- activate your newly created virtualenv (venv) on windows OS with
+```
+venv/Scripts/activate
+```
+- install all dependencies/packages from the requirements.txt file with
+```
+pip install -r requirements.txt
 
 <!-- Project Documentation -->
 #### #Qrx-Documentation:
