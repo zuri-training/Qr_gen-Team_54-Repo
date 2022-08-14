@@ -18,14 +18,13 @@ SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOST = ['*']
-# ALLOWED_HOST = [
-#     '127.0.0.1',
-#     'localhost',
-#     'http://qrx-gen.herokuapp.com',
-#     'https://qrx-gen.herokuapp.com',
-#     'qrx-gen.herokuapp.com',
-# ]
+
+ALLOWED_HOST = [
+    '127.0.0.1',
+    'localhost',
+    'qrx-gen.herokuapp.com',
+    'www.qrx-gen.herokuapp.com',
+]
 
 
 
