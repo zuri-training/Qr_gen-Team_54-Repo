@@ -33,8 +33,13 @@
                     <label>Password</label>
                     <input type="password" class="qrs" name="password" placeholder="********"/>
                 </div>
+
+                {% if request.GET.next %}
+                    <input type="hidden" name="next" value="{{request.GET.next}}">
+                {% endif %}
                 <div class="submit-container"> 
-                <button type="submit"> Login </button>
+                    
+                <button type="submit">Login</button>
             </div>
 
             <div class="social-container"> 

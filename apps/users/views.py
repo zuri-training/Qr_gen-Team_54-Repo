@@ -17,12 +17,10 @@ def user_registration(request):
         email = request.POST.get("email")
         password = request.POST.get("password")
 
-        print(f"FULLNAME = {fullname}")
-        print(f"EMAIL = {email}")
-
         if CustomUser.objects.filter(email=email).exists():
             messages.error(request, "user with this email already exists")
             return redirect("user_login")
+
         user = CustomUser.objects.create(full_name=fullname, email=email)
         if user is not None:
             user.set_password(password)
@@ -38,15 +36,20 @@ def user_registration(request):
 @unauthenticated_user
 def user_login(request):
     template = 'users/loginindex.html'
-    if request.method == "POST":
+    if request.method == 'POST':
         email = request.POST.get("email")
-        password = request.POST.get('password')
+        password = request.POST.get("password")
         user = authenticate(email=email, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, f"you are logged in as {user.full_name}")
+
+            if "next" in request.POST:
+                return redirect(request.POST.get("next"))
+
+            messages.success(request, f"login successful")
             return redirect("qrcode_options")
-        messages.info(request, f"login unsuccessful")
+        messages.error(request, f"login attempt failed, try again")
+        return redirect("user_login")
     return render(request, template)
 
 

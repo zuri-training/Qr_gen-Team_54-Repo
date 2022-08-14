@@ -6,6 +6,7 @@ from .models import Text
 
 
 
+@login_required()
 def generate_qr_code(request):
     template = "texts/text-encode.html"
     user = request.user

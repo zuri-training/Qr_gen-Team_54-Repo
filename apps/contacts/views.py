@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Contacts
 from django.contrib import messages
-
+from PIL import Image
+from core import settings
 
 
 def generate_qr_code(request):
@@ -25,7 +26,15 @@ def generate_qr_code(request):
         )
         if contact_obj is not None:
             contact_obj.save()
-            context = {"contact_obj": contact_obj}
+            qr_image_pdf = contact_obj.name + "_" + str(contact_obj.id) + ".pdf"
+
+            image = Image.open(contact_obj.qr_image)
+            image.save(settings.MEDIA_ROOT + "/" + qr_image_pdf,format("PDF"))
+
+            context = {
+                "contact_obj": contact_obj,
+                "contact_obj_pdf": settings.MEDIA_URL + qr_image_pdf,
+            }
             messages.success(request, f"qr code generated")
             return render(request, template, context)
         return redirect("contact")
