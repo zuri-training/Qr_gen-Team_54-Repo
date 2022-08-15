@@ -27,7 +27,7 @@ class Bank(TimeStampModel):
 
     def save(self, *args, **kwargs):
         qr = qrcode.QRCode(version=1, box_size=10, border=4, error_correction=qrcode.ERROR_CORRECT_L)
-        qr_data = f' http://qrx-gen.herokuapp.com{self.get_absolute_url()}'
+        qr_data = f'{self.get_absolute_url()}'
         qr.add_data(qr_data)
         img = qr.make_image(fill="black", back_color="white")
 
@@ -36,7 +36,6 @@ class Bank(TimeStampModel):
 
         png_name = f'{self.created_by}_qr.png'
         jpg_name = f'{self.created_by}_qr.jpg'
-
     
         self.qr_image.save(png_name, File(buffer), save=False)
         self.qr_image_jpg.save(jpg_name, File(buffer), save=False)

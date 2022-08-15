@@ -14,23 +14,21 @@
 <body>
     <main>
         {% if contact_obj %}
-        <div class="contact_output">
-            <h3>Contacts</h3>
-            <p>
-                <span class="name">{{contact_obj.name}} </span> 
-                <span class="name">{{contact_obj.contact_name}} </span>
-                <span class="number">{{contact_obj.phone_no}}</span>
-            </p>    
-            {% comment %} <p> <span class="number">081244447890</span> </p>  
-            <p><span class="name">John Benson </span> <span class="number">081244447890</span> </p> {% endcomment %}
-        </div>
+            <div class="contact_output">
+                <h3>Contact Details.</h3>
+                <p>
+                    <span class="name">Title: {{contact_obj.name}}</span><br>
+                    <span class="name">Contact Name: {{contact_obj.contact_name}}</span><br>
+                    <span class="number">Phone Number: {{contact_obj.phone_no}}</span><br>
+                </p>    
+            </div>
         {% else %}
-        <div class="contact_output">
-            <h3>Contacts</h3>
-            <p>
-                <span class="name">No contact details found </span> 
-            </p>    
-        </div>
+            <div class="contact_output">
+                <h3>Contacts</h3>
+                <p>
+                    <span class="name">No contact details found </span> 
+                </p>    
+            </div>
         {% endif %}
     </main>    
 </body>

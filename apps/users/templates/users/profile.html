@@ -46,39 +46,26 @@
         </ul>
     </nav>
 
-    {% if user %}
+    {% if user_obj %}
     <main>
         <img src="{% static './assets/Frame 247.svg' %}" alt="fa">
         <div class="inputs"></div>
         <div class="fname">
-            <div class="fi">
-                First Name
-            </div>
-            <div class="name">
-                {{ user.full_name }}
-            </div>
-
+            <div class="fi">First Name</div>
+            <div class="name">{{ user_obj.full_name }}</div>
         </div>
         <div class="surname">
-            <div class="sur">
-                Surname
-            </div>
-            <div class="sName">
-                {{ user.full_name }}
-            </div>
+            <div class="sur">Surname</div>
+            <div class="sName">{{ user_obj.full_name }}</div>
         </div>
         <div class="email">
-            <div class="mail">
-                Email
-            </div>
-            <div class="mailName">
-                {{ user.email }}
-            </div>
+            <div class="mail">Email</div>
+            <div class="mailName">{{ user_obj.email }}</div>
         </div>
         </div>
-
-
     </main>
+    {% else %}
+        <h1>User not Found</h1>
     {% endif %}
 
 

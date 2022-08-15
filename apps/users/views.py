@@ -39,13 +39,9 @@ def user_login(request):
     if request.method == 'POST':
         email = request.POST.get("email")
         password = request.POST.get("password")
-        user = authenticate(email=email, password=password)
+        user = authenticate(username=email, password=password)
         if user is not None:
             login(request, user)
-
-            if "next" in request.POST:
-                return redirect(request.POST.get("next"))
-
             messages.success(request, f"login successful")
             return redirect("qrcode_options")
         messages.error(request, f"login attempt failed, try again")
@@ -57,7 +53,7 @@ def user_login(request):
 def user_profile(request):
     user = request.user
     template = "users/profile.html"
-    context = {"user":user}
+    context = {"user_obj":user}
     return render(request, template, context)
 
 
