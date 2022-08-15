@@ -11,23 +11,23 @@
 </head>
 
 <body>
-    {% if video_obj %}
+    {% if music_obj %}
         <main class="media_preview">
             <div class="dummy">
-                <p>Title {{ video_obj.name }}</p>
-                <video src="">
-                    <source src="{{ video_obj.file }}" type="video/mp4">
-                    <source src="{{ video_obj.file }}" type="video/ogg">
-                </video>
-                <p>File Size: {{ video_obj.file_size }}</p>
-                <p>File Description: {{ video_obj.description }}</p>
+                <p>Title {{ music_obj.name }}</p>
+                <audio src="">
+                    <source src="{{ music_obj.file }}" type="video/mp4">
+                    <source src="{{ music_obj.file }}" type="video/ogg">
+                </audio>
+                <p>File Size: {{ music_obj.file_size }}</p>
+                <p>File Description: {{ music_obj.description }}</p>
             </div>
-            <a href="{{video_obj.file}}" class="download" download>Download Video</a>
+            <a href="{{music_obj.file}}" class="download" download>Download Audio File</a>
         </main>
     {% else %}
         <main class="media_preview">
             <div class="dummy">
-                <h1>No Video File found..</h1>
+                <h1>Audio file not found...</h1>
             </div>
         </main>
     {% endif %}

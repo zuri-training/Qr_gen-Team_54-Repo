@@ -8,17 +8,28 @@
     <title>Contactoutput</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="/static/css/outputs.css">
+        rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static './css/outputs.css' %}">
 </head>
 <body>
     <main>
-        <div class="contact_output">
-            <h3>Contacts</h3>
-            <p><span class="name">{{contact_obj.contact_name}} </span> <span class="number">{{contact_obj.phone_no}}</span> </p>    
-            {% comment %} <p><span class="name">John Benson </span> <span class="number">081244447890</span> </p>  
-            <p><span class="name">John Benson </span> <span class="number">081244447890</span> </p>   {% endcomment %}
-        </div>
+        {% if contact_obj %}
+            <div class="contact_output">
+                <h3>Contact Details.</h3>
+                <p>
+                    <span class="name">Title: {{contact_obj.name}}</span><br>
+                    <span class="name">Contact Name: {{contact_obj.contact_name}}</span><br>
+                    <span class="number">Phone Number: {{contact_obj.phone_no}}</span><br>
+                </p>    
+            </div>
+        {% else %}
+            <div class="contact_output">
+                <h3>Contacts</h3>
+                <p>
+                    <span class="name">No contact details found </span> 
+                </p>    
+            </div>
+        {% endif %}
     </main>    
 </body>
 </html>

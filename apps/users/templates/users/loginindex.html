@@ -27,16 +27,12 @@
                 <h2 class="Title">Login</h2>
                 <div class='form-control'>
                     <label>Your Email</label>
-                    <input type="email" class="qrs" name="email" placeholder="you@email.com"/>
+                    <input type="email" class="qrs" name="email" placeholder="you@email.com" required/>
                 </div>
                 <div  class='form-control'>
                     <label>Password</label>
-                    <input type="password" class="qrs" name="password" placeholder="********"/>
+                    <input type="password" class="qrs" name="password" placeholder="********" required/>
                 </div>
-
-                {% if request.GET.next %}
-                    <input type="hidden" name="next" value="{{request.GET.next}}">
-                {% endif %}
                 <div class="submit-container"> 
                     
                 <button type="submit">Login</button>

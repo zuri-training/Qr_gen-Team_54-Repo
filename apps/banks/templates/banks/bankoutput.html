@@ -10,25 +10,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/outputs.css">
+    <link rel="stylesheet" href="{% static './css/outputs.css' %}">
 </head>
 
 <body>
     <main class="bank_output">
         <h2 class="businessname">Bank Details</h2>
-        <h3>{{bank_obj.account_name}}</h3>
-        <div>
-            <p class="bankname1">{{bank_obj.bank_name}}</p> 
-            <p class="accnum">{{bank_obj.account_no}}</p>
-        </div>
-        {% comment %} <div>
-            <p class="bankname2">FIRST BANK </p> 
-            <p class="accnum">023707775</p>
-        </div>
-        <div>
-            <p class="bankname3">UBA</p> 
-            <p class="accnum">023707775</p>
-        </div> {% endcomment %}
+        <p1>Account Title: {{bank_obj.name}}</p1>
+        <p1>Account Name: {{bank_obj.account_name}}</p1>
+        <p class="bankname1">Bank Name: {{bank_obj.bank_name}}</p> 
+        <p class="accnum">Account Number: {{bank_obj.account_number}}</p>
     </main>
 </body>
 

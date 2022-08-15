@@ -11,23 +11,20 @@
 </head>
 
 <body>
-    {% if video_obj %}
+    {% if pdf_obj %}
         <main class="media_preview">
             <div class="dummy">
-                <p>Title {{ video_obj.name }}</p>
-                <video src="">
-                    <source src="{{ video_obj.file }}" type="video/mp4">
-                    <source src="{{ video_obj.file }}" type="video/ogg">
-                </video>
-                <p>File Size: {{ video_obj.file_size }}</p>
-                <p>File Description: {{ video_obj.description }}</p>
+                <p>Title {{ pdf_obj.name }}</p>
+                <p>File: {{ pdf_obj.file }}</p>
+                <p>File Size: {{ pdf_obj.file_size }}</p>
+                <p>File Description: {{ pdf_obj.description }}</p>
             </div>
-            <a href="{{video_obj.file}}" class="download" download>Download Video</a>
+            <a href="{{pdf_obj.file}}" class="download" download>Download Pdf File</a>
         </main>
     {% else %}
         <main class="media_preview">
             <div class="dummy">
-                <h1>No Video File found..</h1>
+                <h1>No pdf File found..</h1>
             </div>
         </main>
     {% endif %}

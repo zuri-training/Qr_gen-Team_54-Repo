@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,20 +9,24 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/outputs.css">
+    <link rel="stylesheet" href="{% static './css/outputs.css' %}">
 </head>
 <body>
     <main class="business_output">
         <div class="logo">
-            <img src="{{business_obj.logo.url}}" alt="businesslogo"><h3 class="businessname">{{business_obj.name}}</h3>
+            <img src="{{business_obj.logo.url}}" alt="businesslogo">
         </div>
         <div class="body">
-            <p>{{business_obj.bio}}</p>
+            <p>Business Name: {{business_obj.bio}}</p>
+            <p>Business Email: {{business_obj.email}}</p>
+            <p>Business Phone Number: {{business_obj.phone_no}}</p>
+            <p>Business Address: {{business_obj.location}}</p>
+            <p>Business description: {{business_obj.bio}}</p>
         </div>
         <div class="footer">
-            <img src="/static/assets/mail.svg" alt="mail logo"><span class="mail">{{business_obj.email}}</span> 
-            <img src="/static/assets/Phone.svg" alt="phone logo"><span class="phone">{{business_obj.phone_no}}</span> 
-            <img src="/static/assets/Location.svg" alt="location logo"><span class="location">{{business_obj.location}}</span>
+            <img src="{% static './assets/mail.svg' %}" alt="mail logo"><span class="mail">{{business_obj.email}}</span> 
+            <img src="{% static './assets/Phone.svg' %}" alt="phone logo"><span class="phone">{{business_obj.phone_no}}</span> 
+            <img src="{% static './assets/Location.svg' %}" alt="location logo"><span class="location">{{business_obj.location}}</span>
         </div>
     </main>  
 </body>
