@@ -37,12 +37,12 @@ def generate_qr_code(request):
                 "text_obj_pdf": settings.MEDIA_URL + qr_image_pdf,
             }
             return render(request, template, context)
-        return redirect("business")
+        return redirect("text")
     return render(request, template)
 
 
 def text_detail(request, text_id):
-    template = "texts/text-encode.html"
+    template = "texts/textoutput.html"
     text_obj = get_object_or_404(Text, id=text_id)
     context = {"text_obj": text_obj}
     return render(request, template, context)

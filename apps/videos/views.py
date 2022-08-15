@@ -40,7 +40,7 @@ def generate_qr_code(request):
 
 
 def video_detail(request, video_id):
-    template = "videos/video-upload.html"
+    template = "videos/mediadownload.html"
     video_obj = get_object_or_404(Video, id=video_id)
     context = {"video_obj":  video_obj}
     return render(request, template, context)
