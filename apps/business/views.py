@@ -14,7 +14,7 @@ def generate_qr_code(request):
         return redirect("home_page")
 
     if request.method == "POST" and request.FILES["logo"]:
-        business_name = request.POST.get("business_name")
+        business_name = request.POST.get("business-name")
         email = request.POST.get("email_address")
         phone_no = request.POST.get("phone_no")
         location = request.POST.get("location")
