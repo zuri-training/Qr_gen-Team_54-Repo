@@ -39,7 +39,6 @@ def user_login(request):
     if request.method == 'POST':
         email = request.POST.get("email")
         password = request.POST.get("password")
-        if user
         user = authenticate(username=email, password=password)
         if user is not None:
             login(request, user)
