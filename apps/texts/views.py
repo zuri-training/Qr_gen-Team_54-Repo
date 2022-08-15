@@ -2,6 +2,8 @@ from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Text
+from core import settings
+from PIL import Image
 
 
 
@@ -25,7 +27,15 @@ def generate_qr_code(request):
         )
         if text_obj is not None:
             text_obj.save()
-            context = {"text_obj": text_obj}
+
+            qr_image_pdf = text_obj.name + "_" + str(text_obj.id) + ".pdf"
+            image = Image.open(text_obj.qr_image)
+            image.save(settings.MEDIA_ROOT + "/" + qr_image_pdf,format("PDF"))
+
+            context = {
+                "text_obj": text_obj,
+                "text_obj_pdf": settings.MEDIA_URL + qr_image_pdf,
+            }
             return render(request, template, context)
         return redirect("business")
     return render(request, template)
