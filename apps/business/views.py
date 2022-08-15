@@ -14,12 +14,14 @@ def generate_qr_code(request):
         return redirect("home_page")
 
     if request.method == "POST" and request.FILES["logo"]:
-        business_name = request.POST.get("business-name")
+        business_name = request.POST.get("business_name")
         email = request.POST.get("email_address")
         phone_no = request.POST.get("phone_no")
         location = request.POST.get("location")
         description = request.POST.get("description")
         logo = request.FILES.get("logo")
+
+        print(email)
 
         business_obj = Business.objects.create(
             business_name=business_name,
