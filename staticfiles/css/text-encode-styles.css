@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&family=Ubuntu:wght@500;700&display=swap');
+
+/* defining general colors */
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color:#7A428E;
+    --secondary-color: #EE4266;
+    --heading-color:#3B2244;
+    --light-color: #FBF8FC;
+    --text-color: #909298;
+        --input-color: #ACAEB2;
+}
+html {
+    font-size: 50%;
+}
+
+/* styles for body and defining of fonts */
+body {
+    background-color: var(--light-color);
+    font-family: 'Ubuntu', sans-serif;
+}
+/* logo */
+.logo{
+    width: 17rem;
+}
+
+/* main */
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.back {
+display: none;
+}
+
+.one {
+  margin-right: 40px;
+  margin-left: 90px;
+  margin-top: 70px;
+margin-bottom: 50px;
+}
+
+.form {
+  margin-left: 40px;
+  margin-top: 55px;
+  
+}
+
+.form-group {
+  display: block;
+    border-radius: 10px;
+}
+
+input {
+  height: 50px;
+  width: 80%;
+  margin-top: 10px;
+  border: 1px solid #ACADB2;
+
+}
+
+textarea {
+  min-height: 150px;
+  width: 80%;
+  margin-top: 10px;
+    border: 1px solid #ACADB2;
+}
+
+.img{
+  margin-top: 40px;
+}
+
+
+
+.button {
+  display: flex; 
+ justify-content: space-between;
+}
+
+.button-1 {
+  display: flex;
+}
+
+.button-3 {
+  display: flex;
+  
+}
+
+.button1 {
+  height: 50px;
+  width: 284px;
+  top: 50px;
+  border-radius: 10px;
+  margin-right: 50px;
+  margin-top: 50px;
+    margin-bottom: 30px;
+  border: 2px solid #7A428E;
+font-family: 'Ubuntu', sans-serif;
+font-size: 24px;
+font-weight: 500;
+line-height: 28px;
+  background: transparent;
+}
+
+.button2 {
+  height: 50px;
+  width: 284px;
+  top: 50px;
+  border-radius: 10px;
+    margin-top: 50px;
+background: #EE4266;
+border: 1px transparent;
+  color: #FFFFFF;
+font-family: 'Ubuntu', sans-serif;
+font-size: 26px;
+font-weight: 500;
+line-height: 24px;
+margin-bottom: 30px;
+  
+}
+
+.button1:hover {
+
+  box-shadow: 0 0 3px 1px #703586;;
+
+}
+
+.button2:hover {
+
+  box-shadow: 0 0 8px 3px #EE4266;
+
+}
+
+.button3:hover {
+
+  box-shadow: 0 0 8px 3px #EE4266;
+
+}
+
+.button4:hover {
+
+  box-shadow: 0 0 8px 3px #703586;;
+
+}
+
+label {
+font-family: 'Ubuntu', sans-serif;
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+color: #909298;
+}
+
+::placeholder {
+font-family: 'Ubuntu', sans-serif;
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+color: #ACAEB2;
+  padding-top: 10px;
+  padding-left: 10px;
+
+}
+
+.button3 {
+  height: 50px;
+  width: 180px;
+  border-radius: 10px;
+    margin-top: 50px;
+  background: #f8baba;
+border: 1px transparent;
+  color: #FFFFFF;
+margin-bottom: 30px;
+ margin-right: 30px;
+  font-family: 'Ubuntu', sans-serif;
+font-size: 26px;
+font-weight: 500;
+line-height: 24px;
+}
+
+.button4{ 
+height: 50px;
+  width: 180px;
+  border-radius: 10px;
+    margin-top: 50px;
+  background: #C5B4E3;
+border: 1px transparent;
+  color: #FFFFFF;
+margin-bottom: 30px;
+  font-family: 'Ubuntu', sans-serif;
+font-size: 26px;
+font-weight: 500;
+line-height: 24px;
+}
+
+.button3:active {
+  background: #EE4266;
+}
+
+.button4:active {
+  background: linear-gradient(0deg, rgba(84, 13, 110, 0.8), rgba(84, 13, 110, 0.8)),
+linear-gradient(0deg, rgba(90, 90, 90, 0.6), rgba(90, 90, 90, 0.6));
+}
+
+.button5 {
+  height: 40px;
+width: 53px;
+border-radius: 8px;
+padding: 8px;
+background: transparent;
+  border: 1px solid #586C92;
+  margin-right: 15px;
+  margin-left: 40px;
+  font-family: 'Ubuntu',  sans-serif;
+font-size: 18px;
+font-weight: 500;
+line-height: 24px;
+
+}
+
+.button6 {
+ height: 40px;
+width: 49px;
+border-radius: 8px;
+padding: 8px;
+ background: transparent;
+  border: 1px solid #586C92;
+  margin-right: 15px;
+    font-family: 'Ubuntu',  sans-serif;
+font-size: 18px;
+font-weight: 500;
+line-height: 24px;
+
+}
+
+.button7 {
+  height: 40px;
+width: 51px;
+border-radius: 8px;
+padding: 8px;
+background: transparent;
+  border: 1px solid #586C92;
+    font-family: 'Ubuntu',  sans-serif;
+font-size: 18px;
+font-weight: 500;
+line-height: 24px;
+
+}
+
+.share {
+  margin-left: 50px;
+}
+
+
+/* footer */
+
+/* Media queries */
+
+@media screen and (max-width: 1234px) {
+  .one {
+    margin-left: 10px;
+  }
+  
+  .two {
+    margin-left: 30px;
+  }
+  
+}
+
+@media screen and (max-width: 1184px) {
+.button1, .button2 {
+  width: 260px;
+}
+
+  .button3, .button4 {
+width: 160px;
+}
+
+  .one {
+    margin: 0px;
+  }
+  
+  .two {
+    margin-left: 20px;
+  }
+  
+}
+
+@media screen and (max-width: 1084px) {
+.button1, .button2 {
+  width: 250px;
+}
+
+  .button3, .button4 {
+width: 150px;
+}
+
+.two {
+  margin-left: 60px;
+}
+ 
+.one {
+  width: 50%;
+  margin: 0px;
+}
+
+.button1, .button2 {
+  width: 230px;
+  margin: 10px;
+  margin-top: 30px;
+}
+
+.img {
+  margin-left: 60px;}
+}
+
+
+@media screen and (max-width: 916px) {
+
+.button1, .button2 {
+  width: 180px;
+}
+  
+} 
+@media screen and (max-width:824px){
+  
+* {
+  margin: 0px;
+  width: 100%;
+}
+  
+body {
+  display: block;
+  width: 100%;
+  }
+
+.logo {
+  width: 80px;
+}
+
+a {
+  font-family: 'Ubuntu', sans-serif;
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+
+}
+  
+  .logo-1 {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.lg-1 {
+  width: 100px;
+}
+
+  .main {
+  width: 100%;
+  margin-right: 0px;
+    display: block;
+    margin-bottom: 100px;
+   }
+
+.back {
+  display: block;
+}
+
+.bk {
+  width: 50px;
+  margin-left: 30px;
+}
+  
+.one {
+  width: 90%;
+  margin-right: 0px;
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.form {
+  margin-left: 0px;
+  margin-top: 35px;
+  margin-right: 0px;
+  
+    }
+
+  .img-1 {
+    width: 250px;
+    margin-right: 0px;
+  }
+
+.pdfd {
+ margin-left: 5px; 
+  width: 90%;
+}
+  
+input {
+  height: 55px;
+  width: 90%;
+  margin-top: 15px;
+  margin-right: 0px;
+}
+
+textarea {
+  min-height: 150px;
+  width: 90%;
+  margin-top: 15px;
+  margin-right: 0px;
+}
+  
+.two {
+  display: block;
+  margin-left: 185px;
+  margin-top: 50px;
+  margin-right: 0px;
+}
+
+.img {
+  margin-left: 70px;
+  margin-top: 35px;
+  margin-right: 0px;
+}
+
+.button {
+  display: block; 
+  margin-left: 20px;
+  margin-right: 0px;
+}
+
+.button1 {
+  width: 290px;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  font-size: 22px;
+  margin-left: 170px;
+}
+  
+.button2 {
+  width: 290px;
+  margin-top: 30px;
+  margin-right: 0px;
+  font-size: 24px;
+  margin-left: 170px;
+}
+  
+  .button-1 {
+    display: block;
+    margin-left: 70px;
+    margin-right: 0px;
+    margin-top: 0px;
+  }
+
+.button3 {
+    width: 160px;
+    margin-right: 0px;
+    margin-left: 40px;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  font-size: 24px;
+  }
+  
+.button4 {
+    width: 160px;
+    margin-right: 0px;
+    margin-left: 40px;
+  margin-top: 12px;
+  margin-bottom: 0px;
+  font-size: 24px;
+  }
+  
+ .button-3 {
+   margin-top: 15px;
+   margin-right: 0px;
+   margin-left: 60px;
+   display: block;
+ } 
+
+  .share {
+    width: 100px;
+    padding-top: 20px;
+    padding-left: 50px;
+  }
+
+.button7 {
+  margin-right: 0px;
+}
+        
+  
+}
+
+@media screen and (max-width:768px) {
+.button1, .button2 {
+    margin-left: 160px;
+}
+
+.two {
+    margin-left: 170px;
+}
+  
+}
+
+@media screen and (max-width:700px) {
+  
+
+  .button1, .button2 {
+    margin-left: 90px;
+  }
+
+  .two {
+    margin-left: 100px;
+  }
+
+  .img-1 {
+    width: 230px;
+    padding-left: 40px;
+  }
+
+  .button-1 {
+    padding-left: 15px;
+  }
+
+  .button-3 {
+    padding-left: 10px;
+  }
+ 
+}
+
+
+@media screen and (max-width:480px) {
+
+.button1, .button2 {
+        width: 230px;
+  margin-left: 10px;
+}
+  
+.two {
+  margin-left: 15px;
+  padding-left: 0px;
+}
+
+.img-1 {
+  width: 180px;
+  margin-left: 10px;
+  padding-left: 0px;
+}
+  
+  .button-1, .button-3 {
+  margin-left:30px;
+}
+
+
+}
+
+
