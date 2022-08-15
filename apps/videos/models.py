@@ -37,7 +37,7 @@ class Video(TimeStampModel):
     def save(self, *args, **kwargs):
         self.file_size = self.get_file_size(uploaded_file=self.file.size)
         qr = qrcode.QRCode(version=1, box_size=10, border=4, error_correction=qrcode.ERROR_CORRECT_L)
-        qr_data = f'{self.get_absolute_url()}'
+        qr_data = f' http://qrx-gen.herokuapp.com{self.get_absolute_url()}'
         qr.add_data(qr_data)
         img = qr.make_image(fill="black", back_color="white")
 
