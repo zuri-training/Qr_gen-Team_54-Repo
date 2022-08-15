@@ -64,9 +64,9 @@
     </nav>
     <ul class="nav-group-mobile">
       <li>
-        <a href="/templates/signupindex.html" class="mob-link red">Sign up</a>
+        <a href="{% url 'user_registration' %}" class="mob-link red">Sign up</a>
       </li>
-      <li><a href="/templates/loginindex.html" class="mob-link">Log in</a></li>
+      <li><a href="{% url 'user_login' %}" class="mob-link">Log in</a></li>
     </ul>
     {% endif %}
 

@@ -39,8 +39,6 @@ def generate_qr_code(request):
         return redirect("business")
 
 
-
-
 def business_detail(request, business_id):
     template = "business/business.html"
     business_obj = get_object_or_404(Business, id=business_id)
