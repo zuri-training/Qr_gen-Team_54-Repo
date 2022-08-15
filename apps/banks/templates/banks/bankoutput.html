@@ -10,7 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/outputs.css">
+    <link rel="stylesheet" href="{% static './css/outputs.css' %}">
 </head>
 
 <body>
@@ -21,14 +21,10 @@
             <p class="bankname1">{{bank_obj.bank_name}}</p> 
             <p class="accnum">{{bank_obj.account_no}}</p>
         </div>
-        {% comment %} <div>
+        <div>
             <p class="bankname2">FIRST BANK </p> 
             <p class="accnum">023707775</p>
         </div>
-        <div>
-            <p class="bankname3">UBA</p> 
-            <p class="accnum">023707775</p>
-        </div> {% endcomment %}
     </main>
 </body>
 

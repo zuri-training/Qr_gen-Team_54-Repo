@@ -6,12 +6,6 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 
 
-def bank_detail(request, bank_id):
-    template = "banks/bankoutput.html"
-    bank_obj = get_object_or_404(Bank, id=bank_id)
-    context = {"bank_obj": bank_obj}
-    return render(request, template, context)
-
 
 @login_required(login_url="user_login")
 def generate_qr_code(request):
@@ -48,3 +42,10 @@ def generate_qr_code(request):
         messages.error(request, f"input not available")
         return redirect("bank")
     return render(request, template)
+
+
+def bank_detail(request, bank_id):
+    template = "banks/bankoutput.html"
+    bank_obj = get_object_or_404(Bank, id=bank_id)
+    context = {"bank_obj": bank_obj}
+    return render(request, template, context)
