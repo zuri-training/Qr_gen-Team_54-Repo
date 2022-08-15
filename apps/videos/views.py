@@ -19,7 +19,6 @@ def generate_qr_code(request):
     if request.method == 'POST' and request.FILES['media-upload']:
         name = request.POST.get('qr-code-name')
         uploaded_file = request.FILES.get('media-upload')
-
         video_obj = Video.objects.create(name=name, file=uploaded_file, created_by=user)
         if video_obj is not None:
             video_obj.save()
