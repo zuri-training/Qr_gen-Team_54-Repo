@@ -53,18 +53,44 @@
         <form action="{% url 'social' %}" method="post" class="social-display">
             {% csrf_token %}
             <div>
+                <label for="Search Media">Qrcode Name</label>
+                <input type="text" name="qrcode-name" placeholder="Search">
+            </div>
+            <div>
                 <label for="Search Media">Social Media</label>
-                <input type="text" placeholder="Search">
+                <input type="text" name="name" placeholder="Search">
             </div>
             <div>
                 <label for="links">Link</label>
-                <input type="text" placeholder="https://">
+                <input type="text" name="link" placeholder="https://">
             </div>
             <button class="add-link">Add Link</button>
-            <button class="gen-qr">Generate QR Code</button>
+            <button type="submit" class="gen-qr">Generate QR Code</button>
         </form>
             
         <!-- QR code display and download and manipulation -->
+
+
+        <div class="qr-display">
+            {% if social_obj %}
+            <img src="{{social_obj.qr_image.url}}" class="qr-show" alt="qr display">
+            <div>
+                <button class="cust">Customize</button>
+                <button class="down">Download</button>
+            </div>
+            <div class="qr-display-group">
+                <div>
+                    <a class="btn"  href="{{ social_obj.qr_image.url }}" download>PNG</a>
+                    <a class="btn" type="button" href="{{ social_obj.qr_image_jpg.url }}" download>JPG</a>
+                    <a class="btn" type="button" href="{{ social_obj_pdf }}" download>PDF</a>
+                </div>
+
+                <a href="#"><img src="{% static './assets/share-icon.svg' %}" alt="share-icon"
+                    class="share-icon"></a>
+            </div>
+        </div>
+        {% else %}
+
         <div class="qr-display">
             <img src="{% static './assets/qr-display.svg' %}" class="qr-show" alt="qr display">
             <div>
@@ -82,7 +108,7 @@
                     class="share-icon"></a>
             </div>
         </div>
-
+        {% endif %}
     </main>
 
     <!-- footer -->

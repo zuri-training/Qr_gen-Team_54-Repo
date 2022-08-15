@@ -27,7 +27,8 @@ def generate_qr_code(request):
             phone_no=phone_no,
             location=location,
             bio=description,
-            logo=logo
+            logo=logo,
+            created_by=user
         )
         if business_obj is not None:
             business_obj.save()
@@ -37,10 +38,11 @@ def generate_qr_code(request):
             return render(request, template, context)
         messages.info(request, f"error generating qr code please try again...")
         return redirect("business")
+    return render(request, template)
 
 
 def business_detail(request, business_id):
-    template = "business/business.html"
+    template = "business/businessoutput.html"
     business_obj = get_object_or_404(Business, id=business_id)
-    context = {"bussines_obj": business_obj}
+    context = {"business_obj": business_obj}
     return render(request, template, context)

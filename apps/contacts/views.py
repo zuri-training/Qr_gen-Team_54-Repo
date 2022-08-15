@@ -44,7 +44,7 @@ def generate_qr_code(request):
 
 
 def contact_detail(request, contact_id):
-    template = "contacts/contact-page.html"
+    template = "contacts/contactoutput.html"
     contact_obj = get_object_or_404(Contacts, id=contact_id)
     context = {"contact_obj": contact_obj}
     return render(request, template, context)

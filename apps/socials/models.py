@@ -31,8 +31,12 @@ class Social(TimeStampModel):
         img = qr.make_image(fill="black", back_color="white")
         buffer = BytesIO()
         img.save(buffer, 'PNG')
-        file_name = f'{self.created_by}_{self.id}qr.png'
-        self.qr_image.save(file_name, File(buffer), save=False)
+
+        png_name = f'{self.created_by}_qr.png'
+        jpg_name = f'{self.created_by}_qr.jpg'
+
+        self.qr_image.save(png_name, File(buffer), save=False)
+        self.qr_image_jpg.save(jpg_name, File(buffer), save=False)
         return super().save(*args, **kwargs)
     
     

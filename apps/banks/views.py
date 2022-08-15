@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 
 def bank_detail(request, bank_id):
-    template = "banks/bankaccount.html"
+    template = "banks/bankoutput.html"
     bank_obj = get_object_or_404(Bank, id=bank_id)
     context = {"bank_obj": bank_obj}
     return render(request, template, context)
