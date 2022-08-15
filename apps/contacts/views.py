@@ -3,8 +3,10 @@ from .models import Contacts
 from django.contrib import messages
 from PIL import Image
 from core import settings
+from django.contrib.auth.decorators import login_required
 
 
+@login_required(login_url="user_login")
 def generate_qr_code(request):
     template = "contacts/contact-page.html"
 

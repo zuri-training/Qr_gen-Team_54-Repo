@@ -8,7 +8,7 @@ from PIL import Image
 
 
 
-@login_required()
+@login_required(login_url="user_login")
 def generate_qr_code(request):
     template = "texts/text-encode.html"
     user = request.user

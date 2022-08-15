@@ -9,7 +9,7 @@ def site_home(request):
     return render(request, template_name)
 
 
-# @login_required(login_url="user_login")
+@login_required(login_url="user_login")
 def qr_code_options(request):
     template = 'qrcode_options.html'
     return render(request, template)
