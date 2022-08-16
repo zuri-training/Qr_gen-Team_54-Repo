@@ -14,7 +14,7 @@ class Business(TimeStampModel):
     phone_no = models.CharField(max_length=11, validators=[validate_phone_no_value_and_length])
     location = models.CharField(max_length=255)
     bio = models.TextField()
-    logo = models.ImageField()
+    logo = models.FileField()
 
     class Meta:
         ordering = ('-created_on',)
@@ -38,7 +38,8 @@ class Business(TimeStampModel):
 
         png_name = f'{self.created_by}_qr.png'
         jpg_name = f'{self.created_by}_qr.jpg'
-    
+
         self.qr_image.save(png_name, File(buffer), save=False)
         self.qr_image_jpg.save(jpg_name, File(buffer), save=False)
+        
         return super().save(*args, **kwargs)

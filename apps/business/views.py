@@ -1,3 +1,5 @@
+from PIL import Image
+from core import settings
 from .models import Business
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -21,8 +23,6 @@ def generate_qr_code(request):
         description = request.POST.get("description")
         logo = request.FILES.get("logo")
 
-        print(email)
-
         business_obj = Business.objects.create(
             business_name=business_name,
             email=email,
@@ -34,7 +34,14 @@ def generate_qr_code(request):
         )
         if business_obj is not None:
             business_obj.save()
-            context = {"business_obj": business_obj}
+
+            qr_image_pdf = business_obj.business_name + "_" + str(business_obj.id) + ".pdf"
+            image = Image.open(business_obj.qr_image)
+            image.save(settings.MEDIA_ROOT + "/" + qr_image_pdf,format("PDF"))
+            context = {
+                "business_obj": business_obj,
+                "business_obj_pdf": settings.MEDIA_URL + qr_image_pdf,
+            }
             
             messages.success(request, f"qr code generated successfully")
             return render(request, template, context)
