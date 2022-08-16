@@ -1,4 +1,3 @@
-from operator import truediv
 from pathlib import Path
 import environ
 import os
@@ -29,7 +28,7 @@ ALLOWED_HOSTS = [
 ]
 
 
-
+SITE_URL = 'https://qrx-gen.herokuapp.com'
 # Application definition
 
 INSTALLED_APPS = [
@@ -91,6 +90,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "core.wsgi.application"
 
+#SITE_ID = 1
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
