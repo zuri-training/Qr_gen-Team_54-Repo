@@ -93,7 +93,7 @@
                     <div class="format_tag">
                         <a class="button5" type="button" href="{{ business_obj.qr_image.url }}" download>PNG</a>
                         <a class="button6" type="button" href="{{ business_obj.qr_image_jpg.url }}" download>JPG</a>
-                        <a class="button7" type="button" href="{{ business_obj_code_pdf }}" download>PDF</a>
+                        <a class="button7" type="button" href="{{ business_obj_pdf }}" download>PDF</a>
                     </div>
                     <div class="share">
                         <a href="#"><img src="{% static './assets/ei_share-google.svg' %}" alt="share"></a>
@@ -101,7 +101,6 @@
                 </div>
             {% else %}
                 <img class="code" src="{% static './assets/bi_qr-code.svg' %}" alt="code"><br><br>
-                <img class="code" src="{{ business_obj.qr_image.url }}" alt="code"><br><br>
                 <div class="right_button">
                     <button class="customize">Customize</button>
                     <button class="download">Download</button>
@@ -110,7 +109,7 @@
                     <div class="format_tag">
                         <a class="button5" type="button" href="{{ business_obj.qr_image.url }}">PNG</a>
                         <a class="button6" type="button" href="{{ business_obj.qr_image_jpg.url }}">JPG</a>
-                        <a class="button7" type="button" href="{{ business_obj_code_pdf }}">PDF</a>
+                        <a class="button7" type="button" href="{{ business_obj_pdf }}">PDF</a>
                     </div>
                     <div class="share">
                         <a href="#"><img src="{% static './assets/ei_share-google.svg' %}" alt="share"></a>

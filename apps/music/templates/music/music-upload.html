@@ -72,7 +72,7 @@
     <main class="main-content">
       <div class="media-page-content">
         <div class="main-content-left">
-          <form class="media-form" action="{% url 'music' %}" enctype="multipart/form-data">
+          <form class="media-form" action="{% url 'music' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <!--action="index.html" method="post"-->
             <div class="qr-code-name">

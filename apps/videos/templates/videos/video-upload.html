@@ -97,6 +97,7 @@
           </div>
           {% if video_obj %}
             <div class="dl-links">
+              <div class="img"><img src="{{video_obj.qr_image.url}}" class="img-1"/></div>
               <div class="format-btn">
                 <a class="png" type="button" href="{{ video_obj.qr_image.url }}" download>PNG</a>
                 <a class="jpg" type="button" href="{{ video_obj.qr_image_jpg.url }}" download>JPG</a>
@@ -106,6 +107,7 @@
             </div>
           {% else %}
             <div class="dl-links">
+              <div class="img"><img src="{% static './assets/bi_qr-code.svg' %}" class="img-1"/></div>
               <div class="format-btn">
                 <a class="png" type="button" href="{{  video_obj.qr_image.url }}">PNG</a>
                 <a class="jpg" type="button" href="{{  video_obj.qr_image_jpg.url }}">JPG</a>

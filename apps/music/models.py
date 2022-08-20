@@ -1,8 +1,10 @@
-from django.core.files import File
+
 import qrcode
 from io import BytesIO
+from core import settings
 from django.db import models
 from django.urls import reverse
+from django.core.files import File
 from apps.common.models import TimeStampModel
 from apps.common.custom_validators import validate_mp3_file_type
 
@@ -36,7 +38,7 @@ class Music(TimeStampModel):
 
     def save(self, *args, **kwargs):
         qr = qrcode.QRCode(version=1, box_size=10, border=4, error_correction=qrcode.ERROR_CORRECT_L)
-        qr_data = f'{self.get_absolute_url()}'
+        qr_data = f'{settings.SITE_URL}{self.get_absolute_url()}'
         qr.add_data(qr_data)
         img = qr.make_image(fill="black", back_color="white")
 

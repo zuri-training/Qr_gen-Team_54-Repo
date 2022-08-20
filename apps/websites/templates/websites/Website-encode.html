@@ -81,23 +81,23 @@
 
       <div class="two">
         {% if website_obj %}
-        <div class="img"><img src="{{website_obj.qr_image.url}}" class="img-1" /></div>
+          <div class="img"><img src="{{website_obj.qr_image.url}}" class="img-1" /></div>
         {% else %}
           <div class="img"><img src="{% static './assets/bi_qr-code.svg' %}" class="img-1"/></div>
         {% endif %}
-        <div class="button-1">
-          <div><button type="button" class="button3">Customize</button></div>
-          <div><button type="button" class="button4">Download</button></div>
-        </div>
-        <div class="button-3">
-          
-          <a class="button5" type="button" href="{{ website_obj.qr_image.url }}" download>PNG</a>
-          <a class="button6" type="button" href="{{ website_obj.qr_image_jpg.url }}" download>JPG</a>
-          <a class="button7" type="button" href="{{ website_obj_pdf }}" download>PDF</a>
-          <div>
-            <a><img src="{% static './assets/ei_share-google.svg' %}" class="share" /></a>
+          <div class="button-1">
+            <div><button type="button" class="button3">Customize</button></div>
+            <div><button type="button" class="button4">Download</button></div>
           </div>
-        </div>
+          <div class="button-3">
+            
+            <a class="button5" type="button" href="{{ website_obj.qr_image.url }}" download>PNG</a>
+            <a class="button6" type="button" href="{{ website_obj.qr_image_jpg.url }}" download>JPG</a>
+            <a class="button7" type="button" href="{{ website_obj_pdf }}" download>PDF</a>
+            <div>
+              <a><img src="{% static './assets/ei_share-google.svg' %}" class="share" /></a>
+            </div>
+          </div>
       </div>
     </div>
 

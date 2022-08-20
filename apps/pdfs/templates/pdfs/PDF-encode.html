@@ -72,8 +72,20 @@
     <div class= "two"  >
       {% if pdf_obj %}
         <div class="img"><img src="{{ pdf_obj.qr_image.url }}" class="img-1"/></div>
+        <div class="button-3">
+          <a class="button5" type="button" href="{{ pdf_obj.qr_image.url }}" download>PNG</a>
+          <a class="button6" type="button" href="{{ pdf_obj.qr_image_jpg.url }}" download>JPG</a>
+          <a class="button7" type="button" href="{{ pdf_obj_pdf }}" download>PDF</a>
+          <div><a href="{% post_to_facebook  "checkout my encoded mail: {{ pdf_obj.qr_image.url}}" object_or_url "Post to Facebook" %}"><img src="{% static './assets/ei_share-google.svg' %}" class="share"/></a></div>
+        </div>
       {% else %}
         <div class="img"><img src="{% static './assets/bi_qr-code.svg' %}" class="img-1"/></div>
+        <div class="button-3">
+          <a class="button5" type="button" href="{{ pdf_obj.qr_image.url }}">PNG</a>
+          <a class="button6" type="button" href="{{ pdf_obj.qr_image_jpg.url }}">JPG</a>
+          <a class="button7" type="button" href="{{ pdf_obj_pdf }}">PDF</a>
+          <div><a href="{% post_to_facebook  "checkout my encoded mail: {{ pdf_obj.qr_image.url}}" object_or_url "Post to Facebook" %}"><img src="{% static './assets/ei_share-google.svg' %}" class="share"/></a></div>
+        </div>
       {% endif %}
       <div class="button-1">
         <div>
@@ -84,13 +96,6 @@
         </div>
       </div>
 
-      <div class="button-3">
-        <a class="button5" type="button" href="{{ pdf_obj.qr_image.url }}" download>PNG</a>
-        <a class="button6" type="button" href="{{ pdf_obj.qr_image_jpg.url }}" download>JPG</a>
-        <a class="button7" type="button" href="{{ pdf_obj_code_pdf }}" download>PDF</a>
-        <div><a href="{% post_to_facebook  "checkout my encoded mail: {{ pdf_obj.qr_image.url}}" object_or_url "Post to Facebook" %}"><img src="{% static './assets/ei_share-google.svg' %}" class="share"/></a></div>
-      </div>
-      
     </div>
   </div>
 
